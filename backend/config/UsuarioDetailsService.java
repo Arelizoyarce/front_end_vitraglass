@@ -16,7 +16,6 @@ public class UsuarioDetailsService
 
     @Autowired
     private UsuarioRepository usuarioRepository;
-
     @Override
     public UserDetails loadUserByUsername(String correo)
             throws UsernameNotFoundException {
