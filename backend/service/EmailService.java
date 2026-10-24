@@ -30,7 +30,7 @@ public class EmailService {
                     </div>
                     <div style="padding: 25px; background: #f9f9f9; border: 1px solid #e0e0e0;">
                         <p style="color: #333;">Estimado(a) <strong>%s</strong>,</p>
-                        <p style="color: #555;">Adjunto encontrará su cotización <strong>N° %s</strong> con el detalle de los productos solicitados.</p>
+                           <p style="color: #555;">Estimado cliente, le remitimos su cotización <strong>N° %s</strong> con el detalle solicitado.</p>
                         <p style="color: #555;">Si tiene alguna consulta, no dude en contactarnos.</p>
                         <br>
                         <p style="color: #333;">Atentamente,</p>
