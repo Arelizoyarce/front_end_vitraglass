@@ -9,7 +9,6 @@ public class AuthService {
 
     @Autowired
     private UsuarioService usuarioService;
-
     public LoginResponse login(String correo, String contrasena) {
         return usuarioService.login(correo, contrasena);
     }
