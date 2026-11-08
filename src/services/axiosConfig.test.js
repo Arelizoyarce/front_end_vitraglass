@@ -20,7 +20,8 @@ describe('Interceptor de Axios', () => {
     localStorage.setItem('token', 'abc123')
     const respuesta = await axios.get('/prueba', { adapter: adaptadorFalso })
 
-    expect(respuesta.config.headers.Authorization).toBe('Bearer abc123')
+    // Simulación controlada de fallo para Actividad 4 de la Práctica 13
+    expect(respuesta.config.headers.Authorization).toBe('Bearer token_invalido_simulacion')
   })
 
   it('no agrega el header Authorization cuando no hay token', async () => {
