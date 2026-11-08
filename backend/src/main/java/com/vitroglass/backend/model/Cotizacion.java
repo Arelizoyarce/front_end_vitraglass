@@ -1,8 +1,9 @@
 package com.vitroglass.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,46 +15,32 @@ public class Cotizacion {
     @Column(name = "id_cotizacion")
     private Integer idCotizacion;
 
-    @Column(nullable = false, length = 150)
-    private String cliente;
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
 
-    @Column(nullable = false)
-    private LocalDateTime fecha;
+    @ManyToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
 
-    @Column(name = "fecha_entrega")
-    private String fechaEntrega;
+    @Column(name = "fecha_cotizacion")
+    private LocalDateTime fechaCotizacion;
 
-    @Column(nullable = false, length = 30)
-    private String estado = "COTIZADO";
+    private Double subtotal;
 
-    @Column(nullable = false)
-    private Double total = 0.0;
+    private Double impuesto;
 
-    @OneToMany(mappedBy = "cotizacion", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<DetalleCotizacion> detalles = new ArrayList<>();
+    private Double total;
+
+    private String estado;
+
+    private String observaciones;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "cotizacion")
+    private List<DetalleCotizacion> detalleCotizaciones;
 
     public Cotizacion() {
-        this.fecha = LocalDateTime.now();
-        this.estado = "COTIZADO";
-    }
-
-    public Cotizacion(Integer idCotizacion, String cliente, LocalDateTime fecha, String fechaEntrega, String estado, Double total) {
-        this.idCotizacion = idCotizacion;
-        this.cliente = cliente;
-        this.fecha = fecha != null ? fecha : LocalDateTime.now();
-        this.fechaEntrega = fechaEntrega;
-        this.estado = estado != null ? estado : "COTIZADO";
-        this.total = total != null ? total : 0.0;
-    }
-
-    public void addDetalle(DetalleCotizacion detalle) {
-        detalles.add(detalle);
-        detalle.setCotizacion(this);
-    }
-
-    public void removeDetalle(DetalleCotizacion detalle) {
-        detalles.remove(detalle);
-        detalle.setCotizacion(null);
     }
 
     public Integer getIdCotizacion() {
@@ -64,36 +51,44 @@ public class Cotizacion {
         this.idCotizacion = idCotizacion;
     }
 
-    public String getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 
-    public void setCliente(String cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
-    public LocalDateTime getFecha() {
-        return fecha;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setFecha(LocalDateTime fecha) {
-        this.fecha = fecha;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public String getFechaEntrega() {
-        return fechaEntrega;
+    public LocalDateTime getFechaCotizacion() {
+        return fechaCotizacion;
     }
 
-    public void setFechaEntrega(String fechaEntrega) {
-        this.fechaEntrega = fechaEntrega;
+    public void setFechaCotizacion(LocalDateTime fechaCotizacion) {
+        this.fechaCotizacion = fechaCotizacion;
     }
 
-    public String getEstado() {
-        return estado;
+    public Double getSubtotal() {
+        return subtotal;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setSubtotal(Double subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    public Double getImpuesto() {
+        return impuesto;
+    }
+
+    public void setImpuesto(Double impuesto) {
+        this.impuesto = impuesto;
     }
 
     public Double getTotal() {
@@ -104,11 +99,27 @@ public class Cotizacion {
         this.total = total;
     }
 
-    public List<DetalleCotizacion> getDetalles() {
-        return detalles;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setDetalles(List<DetalleCotizacion> detalles) {
-        this.detalles = detalles;
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
+    }
+
+    public List<DetalleCotizacion> getDetalleCotizaciones() {
+        return detalleCotizaciones;
+    }
+
+    public void setDetalleCotizaciones(List<DetalleCotizacion> detalleCotizaciones) {
+        this.detalleCotizaciones = detalleCotizaciones;
     }
 }
