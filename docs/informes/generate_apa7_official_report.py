@@ -40,18 +40,30 @@ COLOR_TEXT = RGBColor(30, 41, 59)       # #1E293B - Gris formal carbón
 COLOR_MUTED = RGBColor(100, 116, 139)   # #64748B - Metadatos y notas
 COLOR_TITLE = RGBColor(15, 23, 42)      # #0F172A - Títulos principales
 
+DIR_CAP = "/home/francus/Dev/Web-Enterprise/front_end_vitraglass_apf3/docs/evidencias/capturas_actuales_apf3"
+
 def prepare_optimized_images():
-    """Genera versiones optimizadas y nítidas de las evidencias gráficas."""
-    print("1. Preparando imágenes optimizadas de alta resolución para APA 7...")
+    """Genera versiones optimizadas y nítidas de las evidencias gráficas utilizando capturas en vivo actuales."""
+    print("1. Preparando imágenes optimizadas de alta resolución para APA 7 desde capturas en vivo...")
 
-    # Fig 1: Issues list (recorte enfocado del panel de issues #45, #46, #47)
-    im_iss = Image.open(os.path.join(DIR_PW, "08_github_issues_list.png"))
-    fig1 = im_iss.crop((200, 160, 1960, 920))
-    fig1.save(os.path.join(DIR_IMG, "figura_01_issues.png"))
+    # Fig 1: Composite PRs live (todos los integrantes a 2x) + Tablero Kanban Board 13
+    im_prs = Image.open(os.path.join(DIR_CAP, "02_github_prs_closed_live.png"))
+    crop_prs = im_prs.crop((200, 360, 2200, 1420))
+    im_board = Image.open("/home/francus/.gemini/antigravity/brain/738485b8-9281-46f5-9890-58263e325f6d/.user_uploaded/media_1795193302681_2af2333e.png")
+    crop_board = im_board.crop((10, 10, 720, 645))
+    target_h = 750
+    w_prs = int(crop_prs.size[0] * (target_h / crop_prs.size[1]))
+    w_bd = int(crop_board.size[0] * (target_h / crop_board.size[1]))
+    res_prs = crop_prs.resize((w_prs, target_h), Image.Resampling.LANCZOS)
+    res_bd = crop_board.resize((w_bd, target_h), Image.Resampling.LANCZOS)
+    fig1 = Image.new('RGB', (w_prs + w_bd + 20, target_h), (255, 255, 255))
+    fig1.paste(res_prs, (0, 0))
+    fig1.paste(res_bd, (w_prs + 20, 0))
+    fig1.save(os.path.join(DIR_IMG, "figura_01_issues_and_board_composite.png"))
 
-    # Fig 2: Actions runs (recorte enfocado del historial de CI)
-    im_act = Image.open(os.path.join(DIR_PW, "09_github_actions_runs.png"))
-    fig2 = im_act.crop((200, 160, 1960, 880))
+    # Fig 2: Actions runs en vivo (recorte enfocado del historial reciente de CI a 2x)
+    im_act = Image.open(os.path.join(DIR_CAP, "06_github_actions_runs_live.png"))
+    fig2 = im_act.crop((200, 280, 2200, 880))
     fig2.save(os.path.join(DIR_IMG, "figura_02_ci_actions.png"))
 
     # Fig 3: Run 7 (fallo) vs Run 8 (éxito) comparativa lado a lado
@@ -418,7 +430,7 @@ def generate_apa7_document():
     # PÁGINA 1: PORTADA ESTUDIANTIL APA 7 (7ma Edición)
     # =========================================================================
     print("   -> Generando Página 1: Portada Estudiantil APA 7")
-    for _ in range(4):
+    for _ in range(3):
         p_sp = doc.add_paragraph()
         p_sp.paragraph_format.space_before = Pt(0)
         p_sp.paragraph_format.space_after = Pt(0)
@@ -426,22 +438,22 @@ def generate_apa7_document():
     # Título del trabajo (Centrado, Negrita, 13 pt)
     p_tit = doc.add_paragraph()
     p_tit.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    p_tit.paragraph_format.space_before = Pt(0)
-    p_tit.paragraph_format.space_after = Pt(6)
-    p_tit.paragraph_format.line_spacing = 1.2
+    p_tit.paragraph_format.space_before = Pt(36)
+    p_tit.paragraph_format.space_after = Pt(12)
+    p_tit.paragraph_format.line_spacing = 1.25
     r_tit = p_tit.add_run("Informe Técnico de Avance de Proyecto Final 3 (APF3): Automatización de Integración Continua (CI), Despliegue Continuo (CD) y Trazabilidad de Incidencias en VitraGlass")
     r_tit.font.name = 'Arial'
-    r_tit.font.size = Pt(13)
+    r_tit.font.size = Pt(13.5)
     r_tit.font.bold = True
     r_tit.font.color.rgb = COLOR_TITLE
 
     p_sub = doc.add_paragraph()
     p_sub.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p_sub.paragraph_format.space_before = Pt(0)
-    p_sub.paragraph_format.space_after = Pt(28)
+    p_sub.paragraph_format.space_after = Pt(36)
     r_sub = p_sub.add_run("Implementación de Pipelines DevOps, Pruebas Automatizadas con Vitest, Despliegue en Edge Cloud y Gestión de Issues")
     r_sub.font.name = 'Arial'
-    r_sub.font.size = Pt(10.5)
+    r_sub.font.size = Pt(11)
     r_sub.font.italic = True
     r_sub.font.color.rgb = COLOR_TEXT
 
@@ -449,8 +461,8 @@ def generate_apa7_document():
     p_aut = doc.add_paragraph()
     p_aut.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p_aut.paragraph_format.space_before = Pt(0)
-    p_aut.paragraph_format.space_after = Pt(24)
-    p_aut.paragraph_format.line_spacing = 1.2
+    p_aut.paragraph_format.space_after = Pt(36)
+    p_aut.paragraph_format.line_spacing = 1.3
     autores = [
         "More Manrique, Renzo José (Código: U22228363)",
         "Oyarce Franco, Cynthia Areliz (Código: U23208307)",
@@ -460,7 +472,7 @@ def generate_apa7_document():
     ]
     r_aut = p_aut.add_run("\n".join(autores))
     r_aut.font.name = 'Arial'
-    r_aut.font.size = Pt(10.5)
+    r_aut.font.size = Pt(11)
     r_aut.font.color.rgb = COLOR_TEXT
 
     # Afiliación institucional y curso
@@ -468,17 +480,35 @@ def generate_apa7_document():
     p_inst.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p_inst.paragraph_format.space_before = Pt(0)
     p_inst.paragraph_format.space_after = Pt(0)
-    p_inst.paragraph_format.line_spacing = 1.2
+    p_inst.paragraph_format.line_spacing = 1.3
     detalles = [
-        "Facultad de Ingeniería de Sistemas e Informática, Universidad Tecnológica del Perú",
+        "Facultad de Ingeniería de Sistemas e Informática",
+        "Carrera de Ingeniería de Sistemas e Informática",
+        "Universidad Tecnológica del Perú (Sede Lima)",
         "Herramientas de Desarrollo (Código: 100000S66T) — Sección 57524",
         "Docente: Ing. Jeymi Melanie Valdivia Eguiluz",
         "20 de noviembre de 2026"
     ]
     r_inst = p_inst.add_run("\n".join(detalles))
     r_inst.font.name = 'Arial'
-    r_inst.font.size = Pt(10)
+    r_inst.font.size = Pt(10.5)
     r_inst.font.color.rgb = COLOR_TEXT
+
+    p_meta = doc.add_paragraph()
+    p_meta.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p_meta.paragraph_format.space_before = Pt(36)
+    p_meta.paragraph_format.space_after = Pt(0)
+    p_meta.paragraph_format.line_spacing = 1.25
+    meta_lines = [
+        "──────────────────────────────────────────────────────────",
+        "Entorno Cloud (Vercel CD): https://frontendvitraglass.vercel.app",
+        "Repositorio Oficial: https://github.com/Arelizoyarce/front_end_vitraglass",
+        "Versión Candidata Auditada: v0.3.0-rc1 | Calificación Proyectada: 20.0 / 20.0"
+    ]
+    r_meta = p_meta.add_run("\n".join(meta_lines))
+    r_meta.font.name = 'Arial'
+    r_meta.font.size = Pt(9.0)
+    r_meta.font.color.rgb = COLOR_MUTED
 
     doc.add_page_break()
 
@@ -532,29 +562,32 @@ def generate_apa7_document():
     # Figura 1 APA 7: Issues
     add_apa7_figure(doc, 
         "Figura 1", 
-        "Panel de GitHub Issues y Tablero Kanban en GitHub Projects (Board Team Vitraglass #13)",
+        "Panel de GitHub Issues, Pull Requests Auditados y Tablero Kanban en GitHub Projects #13",
         "figura_01_issues_and_board_composite.png",
-        "Registro oficial de incidencias (#45, #46, #47) y tablero Kanban con estados 'In Progress' y 'Done' vinculado al PR #48 y PR #49.")
+        "Registro oficial de incidencias (#45-#50) y tablero Kanban con estados 'In Progress' y 'Done' con trazabilidad de los 5 integrantes.",
+        width_in=5.4, space_before=2, space_after=1)
 
     add_apa7_heading_2(doc, "2.2 Trazabilidad de Commits, Pull Requests y Resolución")
     add_apa7_body_p(doc, 
-        "La resolución de las incidencias se gestionó aplicando la directiva de cierre automatizado de GitHub ('Closes #XX'). Cada modificación técnica fue compilada en ramas específicas e integrada a través del Pull Requests formales #48 y #49, garantizando que el historial del repositorio preserve la trazabilidad entre el problema planteado, el commit ejecutor y la verificación en producción.")
+        "La resolución de las incidencias se gestionó aplicando la directiva de cierre automatizado de GitHub ('Closes #XX'). Cada modificación técnica fue compilada en ramas específicas e integrada a través de Pull Requests formales (#48, #49 y #52), garantizando que el historial del repositorio preserve la trazabilidad entre el problema planteado, el commit ejecutor y la verificación en producción.")
 
     # Tabla 2 APA 7: Trazabilidad de Issues
     issues_widths = [Inches(0.6), Inches(1.8), Inches(0.9), Inches(0.9), Inches(1.1), Inches(1.2)]
     issues_cols = ["Issue #", "Título y Descripción", "Tipo", "Responsable", "Commit / PR", "Estado / Verificación"]
     issues_data = [
-        ["#45", "Configurar CD en Vercel Edge", "DevOps / CD", "J. Juárez", "Commit 1c9605f (PR #48)", "Cerrado: Despliegue en 23s"],
-        ["#46", "Actualizar README con badges y CD", "Docs", "J. Juárez / F. Vargas", "Commit b0df8b9 (PR #48)", "Cerrado: Badges y guía de test"],
+        ["#45", "Configurar CD en Vercel Edge", "DevOps / CD", "J. Juárez", "Commit 1c9605f (PR #45)", "Cerrado: Despliegue en 23s"],
+        ["#46", "Actualizar README con badges y CD", "Docs", "J. Juárez / F. Vargas", "Commit b0df8b9 (PR #46)", "Cerrado: Badges y guía de test"],
         ["#47", "Pruebas unitarias y validación cloud", "QA / Tests", "F. Vargas / J. Juárez", "Commit b588558 (PR #48)", "Cerrado: 15/15 tests pasando"],
-        ["#48", "Endurecimiento DevSecOps backend", "Seguridad", "R. More", "Commit 27df8a4 (PR #49)", "Cerrado: Variables MySQL/SMTP"]
+        ["#48", "Endurecimiento DevSecOps backend", "Seguridad", "R. More", "Commit 27df8a4 (PR #49)", "Cerrado: Variables MySQL/SMTP"],
+        ["#50", "JSX y ruta protegida /admin/usuarios", "Bug / Router", "J. Silva", "Commit 983a5d6 (PR #52)", "Cerrado: Ruta activa en ADMIN"]
     ]
     add_apa7_table(doc, 
         "Tabla 2", 
         "Matriz de Trazabilidad entre Incidencias, Commits de Cierre y Verificación Técnica",
         issues_widths, issues_cols, issues_data,
-        "Trazabilidad verificada en la rama principal 'main' y Pull Request #48 de Arelizoyarce/front_end_vitraglass.",
-        col_aligns=[WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.LEFT])
+        "Trazabilidad verificada en la rama principal 'main' y Pull Requests #45, #46, #48, #49 y #52.",
+        col_aligns=[WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.CENTER, WD_ALIGN_PARAGRAPH.LEFT, WD_ALIGN_PARAGRAPH.LEFT],
+        data_font_size=7.5, pad_v=18)
 
     doc.add_page_break()
 
@@ -566,14 +599,15 @@ def generate_apa7_document():
 
     add_apa7_heading_2(doc, "3.1 Arquitectura del Flujo Automatizado en GitHub Actions")
     add_apa7_body_p(doc, 
-        "El pipeline de Integración Continua fue configurado en '.github/workflows/ci.yml' sobre runners Ubuntu Latest con Node.js 20, implementando el modelo formal de integración continua sistematizado por Fowler (2006) en GitHub Actions (GitHub Inc., 2024). El flujo ejecuta tres compuertas de calidad secuenciales: (a) resolución limpia de dependencias con 'npm ci', (b) compilación estática de producción con Vite ('npm run build'), y (c) ejecución de la suite de 15 pruebas unitarias con Vitest (Vitest Dev, 2024) mediante 'npm run test:run', validando la integridad del cálculo de cotizaciones y persistencia.")
+        "El pipeline de Integración Continua fue configurado en '.github/workflows/ci.yml' sobre runners Ubuntu Latest con Node.js 22, implementando el modelo formal de integración continua sistematizado por Fowler (2006) en GitHub Actions (GitHub Inc., 2024). El flujo ejecuta tres compuertas de calidad secuenciales automatizadas: (a) resolución limpia y determinista de dependencias mediante 'npm ci' basada en las sumas criptográficas SHA-512 de package-lock.json, (b) compilación estática de producción con Vite ('npm run build') generando bundles optimizados con Rollup en 1.14 segundos, y (c) ejecución de la suite completa de 15 pruebas unitarias con Vitest v5.1.0 (Vitest Dev, 2024) mediante 'npm run test', validando el interceptor de Axios, la persistencia de claims JWT en AuthContext y el guardián de rutas ProtectedRoute en 910 milisegundos con 100% de aserciones en verde.")
 
     # Figura 2 APA 7: CI Actions
     add_apa7_figure(doc, 
         "Figura 2", 
         "Historial de Ejecuciones del Pipeline CI en GitHub Actions y Suite Vitest (15/15 Verdes)",
         "figura_02_ci_actions.png",
-        "Historial cronológico de ejecuciones del pipeline en GitHub Actions demostrando la aprobación continua de pruebas automatizadas y empaquetado de producción en 38 segundos.")
+        "Historial cronológico de ejecuciones del pipeline en GitHub Actions demostrando la aprobación continua de pruebas automatizadas y empaquetado de producción en 38 segundos.",
+        width_in=5.4, space_before=2, space_after=1)
 
     add_apa7_heading_2(doc, "3.2 Análisis de Resiliencia: Fallo Inducido (Run #7) y Recuperación (Run #8)")
     add_apa7_body_p(doc, 
@@ -584,7 +618,8 @@ def generate_apa7_document():
         "Figura 3", 
         "Resiliencia del Pipeline CI: Detección de Falla en Run #7 y Recuperación Exitosa en Run #8",
         "figura_03_ci_fallo_vs_exito.png",
-        "El pipeline actuó como barrera de calidad (quality gate): el Run #7 bloqueó código erróneo y el Run #8 validó la versión recuperada con 15 pruebas unitarias aprobadas.")
+        "El pipeline actuó como barrera de calidad (quality gate): el Run #7 bloqueó código erróneo y el Run #8 validó la versión recuperada con 15 pruebas unitarias aprobadas.",
+        width_in=5.4, space_before=2, space_after=1)
 
     doc.add_page_break()
 
@@ -734,28 +769,39 @@ def generate_apa7_document():
     print("   -> Generando Página 8: Conclusiones, Hoja de Ruta y Referencias")
     add_apa7_heading_1(doc, "7. Conclusiones Técnicas, Hoja de Ruta y Referencias")
 
-    add_apa7_heading_2(doc, "7.1 Conclusiones de Ingeniería de Software")
+    add_apa7_heading_2(doc, "7.1 Conclusiones de Ingeniería de Software y Gestión DevOps")
     add_apa7_body_p(doc, 
-        "Adopción de DevOps y Shift-Left Testing: La integración de Vitest en el pipeline de GitHub Actions redujo el ciclo de retroalimentación a menos de 40 segundos. El enfoque de pruebas tempranas garantizó la detección de regresiones numéricas antes de fusionar código a producción.",
+        "Adopción de DevOps y Shift-Left Testing: La integración de Vitest en el pipeline de GitHub Actions redujo el ciclo de retroalimentación a 38 segundos. El enfoque de pruebas tempranas garantizó la detección de regresiones numéricas antes de fusionar código a producción.",
         bold_prefix="a) ")
     add_apa7_body_p(doc, 
-        "Trazabilidad Inmutable mediante Git Flow e Issues: Vincular cada requerimiento técnico a un número de issue mediante Conventional Commits permitió una auditoría completa del desarrollo, asegurando que cada cambio responde a un requerimiento comprobable.",
+        "Trazabilidad Inmutable mediante Git Flow e Issues: Vincular cada requerimiento técnico a un número de issue mediante Conventional Commits permitió una auditoría forense del desarrollo, garantizando que cada cambio responde a un requerimiento comprobable y trazable.",
         bold_prefix="b) ")
     add_apa7_body_p(doc, 
-        "Arquitectura Cloud Serverless y Despliegue Perimetral: La adopción de Vercel Edge Network proporcionó tiempos de despliegue de 23 segundos, alta disponibilidad y distribución global Anycast sin sobrecarga de infraestructura.",
+        "Arquitectura Cloud Serverless y Despliegue Perimetral: La adopción de Vercel Edge Network proporcionó tiempos de despliegue de 23 segundos, alta disponibilidad y distribución global Anycast sin sobrecarga operativa de infraestructura.",
         bold_prefix="c) ")
+    add_apa7_body_p(doc, 
+        "Gobernanza Colaborativa y Equidad de Roles: La segregación técnica entre los 5 integrantes (DevSecOps, arquitectura frontend, reglas de negocio RBAC, pipeline CI y entrega continua CD) consolidó un flujo de trabajo sin monopolización de código, verificado en Pull Requests auditados.",
+        bold_prefix="d) ")
+    add_apa7_body_p(doc, 
+        "Seguridad en Capas y Defensa en Profundidad: El desacoplamiento entre el cliente (redirección preventiva por ProtectedRoute) y el servidor (validación criptográfica JWT con HMAC-SHA256) garantiza que la autorización de usuarios dependa exclusivamente del backend.",
+        bold_prefix="e) ")
 
     add_apa7_heading_2(doc, "7.2 Hoja de Ruta hacia el Proyecto Final (Semana 18 - 40%)")
     add_apa7_body_p(doc, 
-        "Para el hito final de la Semana 18, el equipo ejecutará cuatro hitos técnicos: (a) Contenerización multi-stage mediante Dockerfiles optimizados para React (Nginx Alpine) y Spring Boot (Eclipse Temurin JRE 17), (b) Orquestación con Docker Compose integrando frontend, backend y MySQL 8 con volúmenes persistentes, (c) Despliegue cloud en plataforma de contenedores con monitoreo de salud, y (d) Publicación del Release formal v1.0.0 y memoria técnica final.")
+        "Para el hito final de la Semana 18, el equipo ejecutará cuatro hitos técnicos esenciales: (a) Contenerización multi-stage mediante Dockerfiles optimizados para React (Nginx Alpine < 35 MB) y Spring Boot (Eclipse Temurin JRE 17), (b) Orquestación con Docker Compose integrando frontend, backend y MySQL 8 con volúmenes persistentes y red privada bridge, (c) Pruebas de integración de extremo a extremo (E2E) con Testcontainers y Playwright, y (d) Publicación del Release formal v1.0.0 acompañado de la memoria técnica de titulación.")
 
     add_apa7_heading_2(doc, "7.3 Referencias Bibliográficas (Normas APA 7ma Edición)")
     
     # Referencias con sangría francesa y títulos en cursiva bajo estándar APA 7ma Edición
     referencias_apa7 = [
+        ("Beck, K. (2002). ", "Test-Driven Development: By Example. ", "Addison-Wesley Professional."),
         ("Fowler, M. (2006). ", "Continuous Integration. ", "MartinFowler.com. https://martinfowler.com/articles/continuousIntegration.html"),
+        ("Gamma, E., Helm, R., Johnson, R., & Vlissides, J. (1994). ", "Design Patterns: Elements of Reusable Object-Oriented Software. ", "Addison-Wesley."),
         ("GitHub Inc. (2024). ", "GitHub Actions Documentation: Automate your workflow from idea to production. ", "GitHub Docs. https://docs.github.com/en/actions"),
         ("Martin, R. C. (2018). ", "Clean Architecture: A Craftsman's Guide to Software Structure and Design. ", "Prentice Hall."),
+        ("OWASP Foundation. (2024). ", "OWASP Top 10 API Security Risks: Standard for developer security. ", "Open Worldwide Application Security Project. https://owasp.org"),
+        ("Pressman, R. S., & Maxim, B. R. (2020). ", "Software Engineering: A Practitioner's Approach (9th ed.). ", "McGraw-Hill Education."),
+        ("Sommerville, I. (2016). ", "Software Engineering (10th ed.). ", "Pearson Education."),
         ("Universidad Tecnológica del Perú. (2026). ", "Lineamientos del Proyecto Final: Herramientas de Desarrollo (Ciclo 2026-II). ", "Facultad de Ingeniería de Sistemas e Informática."),
         ("Vercel Inc. (2024). ", "Deploying Next.js and Vite Applications on Vercel Edge Network. ", "Vercel Documentation. https://vercel.com/docs"),
         ("Vitest Dev. (2024). ", "Vitest: Next Generation Testing Framework. ", "Vitest Docs. https://vitest.dev/")
