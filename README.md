@@ -137,3 +137,14 @@ Garantizar la estabilidad, integridad y calidad del frontend de **VitraGlass** a
   Un **commit** es una confirmación estática que registra una instantánea de cambios en el historial de Git (código fuente y metadatos del autor). Una **ejecución de Actions** es un proceso dinámico de cómputo en la nube: GitHub levanta una máquina virtual efímera (Ubuntu), clona el repositorio en el estado de ese commit, descarga dependencias, compila y ejecuta las pruebas de forma aislada para emitir un veredicto de éxito (`Success`) o fracaso (`Failure`).
 * **4. ¿Qué ventaja ofrece detectar un error antes de integrar más cambios?**  
   Permite aislar la causa raíz de inmediato con un costo de corrección mínimo (*shift-left testing*). Si se integra un cambio defectuoso a `main`, se contamina la base compartida, afectando a los demás integrantes del equipo e incrementando drásticamente el tiempo de depuración. La detección temprana garantiza que solo código probado y estable forme parte del producto entregable.
+---
+
+## 8. Entrega Continua (CD), Despliegue en la Nube y Versión Candidata (APF3 - Semana 15)
+
+- **Estado de versión:** Versión candidata (`v0.x` / rama `main`) lista para validación funcional y revisión.
+- **Entorno en la nube (CD):** Frontend desplegado en Vercel para prueba en la nube: [https://frontendvitraglass.vercel.app](https://frontendvitraglass.vercel.app).
+- **Flujo CI/CD:** GitHub Actions ejecuta las pruebas unitarias y la compilación (`npm test` y `npm run build` en `.github/workflows/ci.yml`), mientras que la publicación en la nube en Vercel mantiene disponible la versión candidata para revisión.
+- **Trazabilidad de incidencias (Issues):**
+  - `#45`: Configuración de entrega continua (CD) y despliegue en la nube.
+  - `#46`: Actualización de `README.md` con URL en nube y estado de versión candidata.
+  - `#47`: Validación de flujo de autenticación JWT y cotizaciones en entorno de nube.
