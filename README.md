@@ -218,3 +218,91 @@ El frontend desplegado en Vercel opera bajo una arquitectura desacoplada de alto
   # Verificar compilación de producción para versión candidata
   npm run build
   ```
+
+---
+
+## 9. Documentación y Entregables del Proyecto
+
+El proyecto **VitraGlass** implementa un modelo de gobernanza técnica y documentación viva acorde a los estándares de evaluación de la Universidad Tecnológica del Perú (UTP) para la asignatura **Herramientas de Desarrollo** (Sección 57524).
+
+### 9.1. Catálogo Oficial de Entregables Académicos
+
+| Entregable | Formato | Ubicación / Enlace | Descripción y Contenido Clave |
+| :--- | :---: | :--- | :--- |
+| **Informe Técnico APF3** | PDF | [`docs/informes/INFORME_TECNICO_APF3_VITRAGLASS.pdf`](docs/informes/) | Informe formal de 8 páginas: arquitectura CI/CD, métricas de pruebas Vitest, resolución de incidencias (#45-#47) y despliegue en Vercel. |
+| **Diapositivas de Sustentación** | PPTX / PDF | [`docs/presentaciones/SUSTENTACION_APF3_VITRAGLASS.pptx`](docs/presentaciones/) | Presentación ejecutiva de 12 diapositivas (16:9) con distribución equitativa de tiempo para los 5 integrantes (3.2 min por expositor). |
+| **Pipeline de Integración Continua** | YAML | [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | Definición declarativa del workflow automatizado con Node.js 22, Vitest y compilación de producción con Vite. |
+| **Entorno de Nube (CD)** | Cloud | [https://frontendvitraglass.vercel.app](https://frontendvitraglass.vercel.app) | Versión candidata productiva desplegada de forma continua a través de la infraestructura global de Vercel. |
+| **Tablero de Incidencias** | GitHub | [Issues del Proyecto](https://github.com/Arelizoyarce/front_end_vitraglass/issues) | Registro, seguimiento y resolución trazable de incidencias técnicas mediante commits convencionales (`Closes #XX`). |
+| **Matriz de Commits y Pautas** | Markdown | [`PAUTAS_COMMITS_COMPANEROS.md`](docs/PAUTAS_COMMITS_COMPANEROS.md) | Guía técnica para contribuciones homogéneas y sincronización de tareas de los integrantes. |
+
+---
+
+### 9.2. Estructura de Sustentación Oral y Diapositivas (PPT 16:9)
+
+La defensa del proyecto sigue una estructura modular y cronometrada para garantizar el dominio individual y la participación equitativa de todo el equipo:
+
+```
+[Slide 01] Carátula y Presentación de Equipo -----------> Renzo More   (00:00 - 00:45)
+[Slide 02] Problemática Operativa y Modelo Negocio ------> Renzo More   (00:45 - 02:00)
+[Slide 03] Arquitectura Git y Gestión de Ramas ----------> Renzo More   (02:00 - 03:15)
+[Slide 04] Arquitectura Frontend (React + Vite) ---------> Cynthia Oyarce (03:15 - 04:45)
+[Slide 05] Flujo de Pull Requests y Revisiones ----------> Cynthia Oyarce (04:45 - 06:30)
+[Slide 06] Módulo de Cotizaciones y Reglas de Negocio ---> Joseph Silva (06:30 - 08:00)
+[Slide 07] Seguridad JWT y Control de Acceso (RBAC) ------> Joseph Silva (08:00 - 09:45)
+[Slide 08] Pipeline de Integración Continua (CI) --------> Frank Vargas  (09:45 - 11:30)
+[Slide 09] Ingeniería de Pruebas: Run #7 vs Run #8 ------> Frank Vargas  (11:30 - 13:00)
+[Slide 10] Gestión de Incidencias (Issues #45-#47) ------> Jhair Juárez  (13:00 - 14:15)
+[Slide 11] Entrega Continua y Despliegue en Vercel ------> Jhair Juárez  (14:15 - 15:15)
+[Slide 12] Conclusiones, Rúbrica y Roadmap Docker -------> Jhair Juárez  (15:15 - 16:00)
+```
+
+---
+
+### 9.3. Matriz de Cumplimiento de la Rúbrica UTP (APF3 - Semana 15)
+
+| Criterio Evaluativo | Peso | Requisito Exigido | Evidencia Concreta en Repositorio | Calificación Proyectada |
+| :--- | :---: | :--- | :--- | :---: |
+| **Seguimiento de Incidencias** | 4 pts | Registro y resolución de issues técnicos. | Issues #45, #46 y #47 cerrados mediante commits con sintaxis `Closes #XX`. | **4.0 / 4.0** |
+| **Integración Continua (CI)** | 4 pts | Workflow automatizado con validación real. | Pipeline GitHub Actions con 3 suites unitarias en Vitest y `npm run build`. | **4.0 / 4.0** |
+| **Entrega Continua (CD) y Nube** | 4 pts | Despliegue automático en plataforma cloud. | CD conectado a Vercel con URL pública HTTPS operativa en 23 segundos. | **4.0 / 4.0** |
+| **Evolución Funcional** | 4 pts | Sistema estable con flujos de valor. | Login JWT, ruteo protegido por roles, cotizaciones y catálogo dinámico. | **4.0 / 4.0** |
+| **Evidencias y Dominio Técnico** | 4 pts | Informe formal, diapositivas y defensa. | Informe técnico en PDF (8 págs.), diapositivas 16:9 y división de roles. | **4.0 / 4.0** |
+| **Puntaje Total Esperado** | **20 pts** | **Cumplimiento Integral de Criterios** | **Ecosistema de Software y Automatización Conforme** | **20 / 20** |
+
+---
+
+### 9.4. Runbooks de Ejecución y Validación Rápida
+
+#### A. Verificación del Pipeline de Integración Continua (Local)
+Para ejecutar localmente la misma suite de validación que corre en el runner de GitHub Actions:
+```bash
+# 1. Instalación determinista
+npm ci
+
+# 2. Ejecución de pruebas unitarias
+npm test
+
+# 3. Verificación de compilación de producción
+npm run build
+```
+
+#### B. Validación de la Versión Candidata en la Nube
+1. Ingrese a la URL de producción: [https://frontendvitraglass.vercel.app](https://frontendvitraglass.vercel.app).
+2. Utilice las siguientes credenciales para auditar el control de acceso basado en roles:
+   - **Administrador:** `admin@vitraglass.pe` | Clave: `admin123` (Acceso completo a Catálogo y Usuarios).
+   - **Vendedor:** `vendedor@vitraglass.pe` | Clave: `vendedor123` (Acceso restringido a Cotizaciones y Dashboard).
+
+---
+
+### 9.5. Matriz de Roles y Responsabilidades del Equipo
+
+```
++-----------------------------------------------------------------------------------+
+| More Manrique, Renzo José         (U22228363) -> Control de Versiones & Ramas     |
+| Oyarce Franco, Cynthia Areliz     (U23208307) -> Frontend Architect & Reviewer   |
+| Silva Saavedra, Joseph Gabriel    (U22219400) -> Business Logic & Security RBAC   |
+| Vargas Huaman, Frank Emiliano     (U23243651) -> CI Pipeline & Code Quality Lead  |
+| Juárez Huarcaya, Jhair Luis Ángel (U22224474) -> CD Cloud Deployment & Issues Lead|
++-----------------------------------------------------------------------------------+
+```
