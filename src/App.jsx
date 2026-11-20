@@ -54,7 +54,7 @@ function App() {
         }
       >
         <Route path="/admin/pedidos" element={<Dashboard isAdmin={true} />} />
-       /* <Route path="/admin/usuarios" element={<AdminUsuarios />} />*/
+        <Route path="/admin/usuarios" element={<AdminUsuarios />} />
         <Route path="/admin/vidrios" element={<AdminVidrios />} />
       </Route>
     </Routes>
