@@ -90,6 +90,10 @@ const descargarArchivoSimulado = (blob, nombreArchivo) => {
   document.body.appendChild(elementoDescarga);
   elementoDescarga.click();
   elementoDescarga.remove();
+  // Revocar el objeto URL en memoria para prevenir memory leaks en el navegador
+  setTimeout(() => {
+    window.URL.revokeObjectURL(enlaceTemporal);
+  }, 100);
 };
 
 /**
