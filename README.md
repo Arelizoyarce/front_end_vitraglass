@@ -105,3 +105,35 @@ git push origin feat/nombre-funcionalidad
 - Silva Saavedra, Joseph Gabriel Enrique — (U22219400)
 - Vargas Huaman, Frank Emiliano — (U23243651)
 - Juárez Huarcaya, Jhair Luis Ángel — (U22224474)
+
+## 7. Integración Continua con GitHub Actions (Práctica N.° 13 - Semana 13)
+
+### 7.1. Propósito del Flujo Automatizado
+Garantizar la estabilidad, integridad y calidad del frontend de **VitraGlass** ante cada cambio propuesto. Dado que el aplicativo gestiona autenticación JWT, control de roles (`ADMIN` y `VENDEDOR`), cotizaciones dinámicas y comunicación asíncrona mediante Axios, el pipeline asegura de manera automática que ningún commit o Pull Request rompa la lógica central antes de integrarse a la rama principal `main`.
+
+### 7.2. Trazabilidad y Enlace a las Ejecuciones
+* **Historial de Ejecuciones (GitHub Actions):** [https://github.com/Arelizoyarce/front_end_vitraglass/actions](https://github.com/Arelizoyarce/front_end_vitraglass/actions)
+* **Archivo de Configuración:** [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
+
+### 7.3. Procedimiento Técnico Realizado por el Equipo
+1. **Definición del Pipeline:** Se configuró el runner `ubuntu-latest` con Node.js 22 para dispararse ante eventos de `push` y `pull_request`.
+2. **Instalación Limpia:** Se ejecuta `npm ci` para garantizar que las dependencias coincidan exactamente con `package-lock.json`.
+3. **Suite de Pruebas Unitarias:** Ejecución automática de `npm test` con **Vitest** y **React Testing Library**:
+   * `src/components/ProtectedRoute.test.jsx`: Verificación de control de acceso según roles y redirección.
+   * `src/context/AuthContext.test.jsx`: Verificación de login, logout, persistencia y limpieza de tokens en `localStorage`.
+   * `src/services/axiosConfig.test.js`: Verificación de inyección de encabezados `Authorization: Bearer <token>`.
+4. **Validación de Compilación:** Ejecución de `npm run build` con Vite para descartar errores de empaquetado y sintaxis.
+
+### 7.4. Respuestas Técnicas a la Actividad 6 de la Guía
+* **1. ¿Qué evento activa el workflow?**  
+  El workflow está configurado para activarse automáticamente ante dos eventos de GitHub: cualquier `push` enviado hacia cualquier rama del repositorio y ante la apertura o actualización de un `pull_request`. Esto asegura validación continua tanto en el desarrollo sobre ramas aisladas como en la fase de integración previa a la rama principal.
+* **2. ¿Qué verifica la prueba automatizada?**  
+  Verifica de forma aislada y determinista las reglas fundamentales del frontend:
+  1. Que las rutas protegidas no sean accesibles para usuarios sin autenticación o con rol insuficiente.
+  2. Que el contexto global de autenticación almacene, propague y elimine correctamente las credenciales JWT en el navegador.
+  3. Que el interceptor de Axios inyecte el Bearer token en las peticiones salientes.
+  4. Que la compilación de producción de Vite termine sin fallos de bundling ni dependencias rotas.
+* **3. ¿Qué diferencia existe entre un commit y una ejecución de Actions?**  
+  Un **commit** es una confirmación estática que registra una instantánea de cambios en el historial de Git (código fuente y metadatos del autor). Una **ejecución de Actions** es un proceso dinámico de cómputo en la nube: GitHub levanta una máquina virtual efímera (Ubuntu), clona el repositorio en el estado de ese commit, descarga dependencias, compila y ejecuta las pruebas de forma aislada para emitir un veredicto de éxito (`Success`) o fracaso (`Failure`).
+* **4. ¿Qué ventaja ofrece detectar un error antes de integrar más cambios?**  
+  Permite aislar la causa raíz de inmediato con un costo de corrección mínimo (*shift-left testing*). Si se integra un cambio defectuoso a `main`, se contamina la base compartida, afectando a los demás integrantes del equipo e incrementando drásticamente el tiempo de depuración. La detección temprana garantiza que solo código probado y estable forme parte del producto entregable.
