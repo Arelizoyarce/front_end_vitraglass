@@ -1,24 +1,36 @@
-name: Integración Continua - Frontend VitraGlass
+name: CI/CD - Verificación y Entrega Candidata (Vitraglass)
+
 on:
   push:
+    branches: [ "main" ]
   pull_request:
+    branches: [ "main" ]
+
 permissions:
   contents: read
+
 jobs:
   verificacion:
-    name: Pruebas y compilación
+    name: Pruebas, compilación y versión candidata (CI/CD)
     runs-on: ubuntu-latest
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
+
       - name: Preparar Node.js 22
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
+          cache: 'npm'
+
       - name: Instalar dependencias
         run: npm ci
+
       - name: Ejecutar pruebas automatizadas
         run: npm test
-      - name: Compilar aplicación
+
+      - name: Compilar aplicación (versión candidata)
         run: npm run build
+
+      - name: Registrar etapa de entrega continua en nube
+        run: echo "Versión candidata compilada; despliegue en nube gestionado en Vercel."
