@@ -1,0 +1,32 @@
+# AUDITORÍA DE ENTREGA CONTINUA EN PRODUCCIÓN (VERCEL EDGE NETWORK)
+# Fecha de Ejecución: 2026-11-20T15:57:50.210415Z
+# URL Oficial: https://frontendvitraglass.vercel.app
+# Repositorio: https://github.com/Arelizoyarce/front_end_vitraglass
+
+HTTP/2 200 
+accept-ranges: bytes
+access-control-allow-origin: *
+age: 35455
+cache-control: public, max-age=0, must-revalidate
+content-disposition: inline
+content-type: text/html; charset=utf-8
+date: Fri, 20 Nov 2026 15:57:50 GMT
+etag: "12d0af42cd14b3dae79e4aa9ea76b612"
+last-modified: Fri, 20 Nov 2026 06:06:54 GMT
+server: Vercel
+strict-transport-security: max-age=63072000; includeSubDomains; preload
+x-vercel-cache: HIT
+x-vercel-id: gru1::w4zsx-1795190270156-271e48959d59
+content-length: 460
+
+
+--- TIMINGS & METRICS ---
+HTTP Code: 200
+DNS Lookup: 0.095137s
+TCP Connect: 0.097361s
+App Connect (TLS): 0.277341s
+Pre-transfer: 0.277458s
+Start Transfer: 0.372911s
+Total Time: 0.373014s
+Size Download: 0 bytes
+Speed Download: 0 bytes/s

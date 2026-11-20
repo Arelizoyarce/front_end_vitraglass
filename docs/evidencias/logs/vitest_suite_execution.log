@@ -1,0 +1,15 @@
+npm notice run vitraglass@0.0.0 test:run
+npm notice run vitest run
+
+ RUN  v5.1.0 /home/francus/Dev/Web-Enterprise/front_end_vitraglass_apf3
+
+ ✓ src/context/AuthContext.test.jsx (3 tests) 60ms
+ ✓ src/services/axiosConfig.test.js (2 tests) 10ms
+ ✓ src/services/cotizacion.service.test.js (6 tests) 11ms
+ ✓ src/components/ProtectedRoute.test.jsx (4 tests) 58ms
+
+ Test Files  4 passed (4)
+      Tests  15 passed (15)
+   Start at  10:56:43
+   Duration  1.08s (environment 77%, setup 11%, import 6%, tests 4%, transform 1%, worker 1%)
+

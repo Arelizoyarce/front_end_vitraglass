@@ -1,0 +1,219 @@
+Pruebas y compilación	UNKNOWN STEP	﻿2026-11-08T02:53:50.1277965Z Current runner version: '2.338.2'
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1300403Z ##[group]Runner Image Provisioner
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1301126Z Hosted Compute Agent
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1301698Z Version: 20261028.624
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1302247Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1302880Z Build Date: 2026-10-28T21:51:42Z
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1303531Z Worker ID: {54649586-9bfb-4a2d-994a-4e7f4bd7b8b0}
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1304165Z Region: westus2
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1304727Z Cloud: Azure
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1305209Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1306379Z ##[group]Operating System
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1307003Z Ubuntu
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1307765Z 24.04.5
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1308251Z LTS
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1308720Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1309238Z ##[group]Runner Image
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1309803Z Image: ubuntu-24.04
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1310307Z Version: 20261101.360.1
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1311521Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1312818Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1313671Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1314648Z ##[group]GITHUB_TOKEN Permissions
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1316507Z Contents: read
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1317095Z Metadata: read
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1318161Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1320035Z Secret source: Actions
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1320785Z Cache mode: write
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1321547Z Prepare workflow directory
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1586721Z Prepare all required actions
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.1625465Z Getting action download info
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.4824420Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.5800829Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.7977010Z Complete job name: Pruebas y compilación
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8653724Z ##[group]Run actions/checkout@v4
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8654423Z with:
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8654824Z   repository: Arelizoyarce/front_end_vitraglass
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8658124Z   token: ***
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8658492Z   ssh-strict: true
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8658853Z   ssh-user: git
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8659218Z   persist-credentials: true
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8659613Z   clean: true
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8659976Z   sparse-checkout-cone-mode: true
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8660396Z   fetch-depth: 1
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8660744Z   fetch-tags: false
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8661103Z   show-progress: true
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8661458Z   lfs: false
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8661795Z   submodules: false
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8662159Z   set-safe-directory: true
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8662567Z   allow-unsafe-pr-checkout: false
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:50.8663139Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1167928Z Syncing repository: Arelizoyarce/front_end_vitraglass
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1170098Z ##[group]Getting Git version info
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1171384Z Working directory is '/home/runner/work/front_end_vitraglass/front_end_vitraglass'
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1173060Z [command]/usr/bin/git version
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1351578Z git version 2.56.0
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1367497Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1380271Z Temporarily overriding HOME='/home/runner/work/_temp/3a5f9ec2-b029-4e04-9519-c231fcb7f745' before making global git config changes
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1382216Z Adding repository directory to the temporary git global config as a safe directory
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1385636Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/front_end_vitraglass/front_end_vitraglass
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1434570Z Deleting the contents of '/home/runner/work/front_end_vitraglass/front_end_vitraglass'
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1441719Z ##[group]Initializing the repository
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1448983Z [command]/usr/bin/git init /home/runner/work/front_end_vitraglass/front_end_vitraglass
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1561493Z hint: Using 'master' as the name for the initial branch. This default branch name
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1562759Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1563594Z hint: to use in all of your new repositories, which will suppress this warning,
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1564380Z hint: call:
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1564822Z hint:
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1565334Z hint: 	git config --global init.defaultBranch <name>
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1565895Z hint:
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1566401Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1567392Z hint: 'development'. The just-created branch can be renamed via this command:
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1568162Z hint:
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1568541Z hint: 	git branch -m <name>
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1568972Z hint:
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1569516Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1573191Z Initialized empty Git repository in /home/runner/work/front_end_vitraglass/front_end_vitraglass/.git/
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1582773Z [command]/usr/bin/git remote add origin https://github.com/Arelizoyarce/front_end_vitraglass
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1646839Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1648050Z ##[group]Disabling automatic garbage collection
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1649020Z [command]/usr/bin/git config --local gc.auto 0
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1679576Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1680654Z ##[group]Setting up auth
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1685587Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.1725696Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.2102266Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.2149757Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.2371408Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.2410372Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.2615130Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.2658816Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.2660006Z ##[group]Fetching the repository
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.2670412Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5ec39e80e62b6c8ce2ef4112123c5b302cd18503:refs/remotes/origin/feat/simulacion-error-ci
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7005875Z From https://github.com/Arelizoyarce/front_end_vitraglass
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7007622Z  * [new ref]         5ec39e80e62b6c8ce2ef4112123c5b302cd18503 -> origin/feat/simulacion-error-ci
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7017694Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7018440Z ##[group]Determining the checkout info
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7019192Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7019635Z [command]/usr/bin/git sparse-checkout disable
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7141020Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7177016Z ##[group]Checking out the ref
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7180711Z [command]/usr/bin/git checkout --progress --force -B feat/simulacion-error-ci refs/remotes/origin/feat/simulacion-error-ci
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7412064Z Switched to a new branch 'feat/simulacion-error-ci'
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7416534Z branch 'feat/simulacion-error-ci' set up to track 'origin/feat/simulacion-error-ci'.
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7458449Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7474870Z [command]/usr/bin/git log -1 --format=%H
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7505819Z 5ec39e80e62b6c8ce2ef4112123c5b302cd18503
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7783012Z ##[group]Run actions/setup-node@v4
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7783539Z with:
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7784048Z   node-version: 22
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7784434Z   cache: npm
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7784799Z   always-auth: false
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7785195Z   check-latest: false
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7789441Z   token: ***
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.7789804Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.8983236Z Found in cache @ /opt/hostedtoolcache/node/22.23.4/x64
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.8987943Z (node:2124) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.8990087Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:51.8991974Z ##[group]Environment details
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:52.2553687Z node: v22.23.4
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:52.2554650Z npm: 10.9.9
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:52.2555197Z yarn: 1.22.22
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:52.2556595Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:52.2570035Z [command]/opt/hostedtoolcache/node/22.23.4/x64/bin/npm config get cache
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:52.3454171Z /home/runner/.npm
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:52.5894654Z Cache hit for: node-cache-Linux-x64-npm-f42635ffcb1a03bf8eea2a2f1c62dd8ca3252d9342326203191fc0a63531b5de
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:52.6009277Z (node:2124) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:53.8942205Z Received 16777216 of 48516036 (34.6%), 16.0 MBs/sec
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:54.0928737Z Received 48516036 of 48516036 (100.0%), 38.6 MBs/sec
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:54.0929449Z Cache Size: ~46 MB (48516036 B)
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:54.0950164Z [command]/usr/bin/tar -xf /home/runner/work/_temp/1e4d382e-b9fb-4002-9f3a-22b65fcc7fed/cache.tzst -P -C /home/runner/work/front_end_vitraglass/front_end_vitraglass --use-compress-program unzstd
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:54.2164804Z Cache restored successfully
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:54.2189920Z Cache restored from key: node-cache-Linux-x64-npm-f42635ffcb1a03bf8eea2a2f1c62dd8ca3252d9342326203191fc0a63531b5de
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:54.2445033Z ##[group]Run npm ci
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:54.2445334Z ^[[36;1mnpm ci^[[0m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:54.2474906Z shell: /usr/bin/bash -e {0}
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:54.2475158Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:53:57.6753097Z npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.4948463Z 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.4949480Z added 307 packages, and audited 308 packages in 7s
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.4949879Z 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.4950121Z 70 packages are looking for funding
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.4950540Z   run `npm fund` for details
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.5089632Z 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.5090299Z 4 high severity vulnerabilities
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.5090567Z 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.5090718Z To address all issues, run:
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.5090957Z   npm audit fix
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.5091082Z 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.5091197Z Run `npm audit` for details.
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.5769944Z ##[group]Run npm test
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.5770180Z ^[[36;1mnpm test^[[0m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.5788866Z shell: /usr/bin/bash -e {0}
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.5789123Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.6582850Z 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.6583478Z > vitraglass@0.0.0 test
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.6583918Z > vitest run
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.8893220Z ^[[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.8894287Z   - `__dirname` (vite.config.js:9:27). Use `import.meta.dirname` instead
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.8895161Z Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.^[[39m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.8895601Z 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.9201302Z 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.9208898Z ^[[1m^[[30m^[[46m RUN ^[[49m^[[39m^[[22m ^[[36mv5.1.0 ^[[39m^[[90m/home/runner/work/front_end_vitraglass/front_end_vitraglass^[[39m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:01.9227724Z 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.1657433Z  ^[[32m✓^[[39m src/context/AuthContext.test.jsx ^[[2m(^[[22m^[[2m3 tests^[[22m^[[2m)^[[22m^[[32m 85^[[2mms^[[22m^[[39m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.1919343Z  ^[[32m✓^[[39m src/components/ProtectedRoute.test.jsx ^[[2m(^[[22m^[[2m4 tests^[[22m^[[2m)^[[22m^[[32m 66^[[2mms^[[22m^[[39m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.2192684Z  ^[[32m✓^[[39m src/services/axiosConfig.test.js ^[[2m(^[[22m^[[2m2 tests^[[22m^[[2m)^[[22m^[[32m 5^[[2mms^[[22m^[[39m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.2220465Z 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.2223964Z ^[[2m Test Files ^[[22m ^[[1m^[[32m3 passed^[[39m^[[22m^[[90m (3)^[[39m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.2226380Z ^[[2m      Tests ^[[22m ^[[1m^[[32m9 passed^[[39m^[[22m^[[90m (9)^[[39m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.2226977Z ^[[2m   Start at ^[[22m 02:54:01
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.2230313Z ^[[2m   Duration ^[[22m 1.29s^[[2m (environment 73%, setup 15%, tests 5%, import 4%, transform 4%)^[[22m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.2237972Z 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.2569445Z ##[group]Run npm run build
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.2569695Z ^[[36;1mnpm run build^[[0m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.2588588Z shell: /usr/bin/bash -e {0}
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.2588817Z ##[endgroup]
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.3353749Z 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.3354406Z > vitraglass@0.0.0 build
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.3354828Z > vite build
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.3354998Z 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.4942656Z ^[[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.4943392Z   - `__dirname` (vite.config.js:9:27). Use `import.meta.dirname` instead
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.4943939Z Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.^[[39m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.5095459Z ^[[36mvite v8.3.0 ^[[32mbuilding client environment for production...^[[36m^[[39m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.5207659Z transforming...
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:03.9340185Z ✓ 11738 modules transformed.
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.0468594Z rendering chunks...
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.1436680Z computing gzip size...
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.1528253Z dist/index.html                                0.46 kB │ gzip:   0.29 kB
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.1528998Z dist/assets/background_login-AbMd5ubL.png  2,284.26 kB
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.1529738Z dist/assets/index--X-5Qudu.css                 1.77 kB │ gzip:   0.80 kB
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.1530511Z dist/assets/index-S8R11s2z.js                675.69 kB │ gzip: 210.88 kB
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.1530872Z 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.2488913Z ^[[33m[plugin builtin:vite-reporter] 
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.2489433Z (!) Some chunks are larger than 500 kB after minification. Consider:
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.2489904Z - Using dynamic import() to code-split the application
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.2490706Z - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.2491510Z - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.^[[39m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.5946278Z ^[[32m✓ built in 1.08s^[[39m
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.6522194Z Post job cleanup.
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.7545195Z (node:2280) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.7545876Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.7548244Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-f42635ffcb1a03bf8eea2a2f1c62dd8ca3252d9342326203191fc0a63531b5de, not saving cache.
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.7688642Z Post job cleanup.
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.8459772Z [command]/usr/bin/git version
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.8499901Z git version 2.56.0
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.8533509Z Temporarily overriding HOME='/home/runner/work/_temp/d1760ee8-b7b4-45d4-8f22-615073091f85' before making global git config changes
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.8534648Z Adding repository directory to the temporary git global config as a safe directory
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.8538512Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/front_end_vitraglass/front_end_vitraglass
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.8576934Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.8610104Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.8840401Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.8862806Z http.https://github.com/.extraheader
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.8872416Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.8904202Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.9128642Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.9165825Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.9520443Z Cleaning up orphan processes
+Pruebas y compilación	UNKNOWN STEP	2026-11-08T02:54:04.9849935Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

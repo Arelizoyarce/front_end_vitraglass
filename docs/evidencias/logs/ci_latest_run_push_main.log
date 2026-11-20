@@ -1,0 +1,220 @@
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	﻿2026-11-20T15:32:57.5073390Z Current runner version: '2.338.2'
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5092467Z ##[group]Runner Image Provisioner
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5093116Z Hosted Compute Agent
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5093606Z Version: 20261111.635
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5094078Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5094884Z Build Date: 2026-11-11T01:49:01Z
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5095398Z Worker ID: {206d14df-7cf3-416c-900b-20ffc7aa3e20}
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5095911Z Region: us-west-2
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5096309Z Cloud: AWS
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5096706Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5097663Z ##[group]Operating System
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5098109Z Ubuntu
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5098490Z 26.04.1
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5098872Z LTS
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5099282Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5099668Z ##[group]Runner Image
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5100094Z Image: ubuntu-26.04
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5100501Z Version: 20261116.88.1
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5101467Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.88/images/ubuntu/Ubuntu2604-Readme.md
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5102607Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.88
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5103294Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5104068Z ##[group]GITHUB_TOKEN Permissions
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5106060Z Contents: read
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5106481Z Metadata: read
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5106876Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5108526Z Secret source: Actions
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5109207Z Cache mode: write
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5109708Z Prepare workflow directory
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5338538Z Prepare all required actions
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.5374935Z Getting action download info
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:57.8933700Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:58.9280480Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.1757044Z Complete job name: Pruebas, compilación y versión candidata (CI/CD)
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2578102Z ##[group]Run actions/checkout@v4
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2579227Z with:
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2580064Z   repository: Arelizoyarce/front_end_vitraglass
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2588117Z   token: ***
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2588927Z   ssh-strict: true
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2589740Z   ssh-user: git
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2590533Z   persist-credentials: true
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2591503Z   clean: true
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2592624Z   sparse-checkout-cone-mode: true
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2593562Z   fetch-depth: 1
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2594507Z   fetch-tags: false
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2595323Z   show-progress: true
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2596140Z   lfs: false
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2596906Z   submodules: false
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2597745Z   set-safe-directory: true
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2598641Z   allow-unsafe-pr-checkout: false
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:32:59.2599769Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5585081Z Syncing repository: Arelizoyarce/front_end_vitraglass
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5587343Z ##[group]Getting Git version info
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5588097Z Working directory is '/home/runner/work/front_end_vitraglass/front_end_vitraglass'
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5588910Z [command]/usr/bin/git version
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5589229Z git version 2.56.1
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5590357Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5594825Z Temporarily overriding HOME='/home/runner/work/_temp/ca6c3dc0-4c2c-4e10-8f57-7f9efdf5421b' before making global git config changes
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5595554Z Adding repository directory to the temporary git global config as a safe directory
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5596238Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/front_end_vitraglass/front_end_vitraglass
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5689964Z Deleting the contents of '/home/runner/work/front_end_vitraglass/front_end_vitraglass'
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5694809Z ##[group]Initializing the repository
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5698088Z [command]/usr/bin/git init /home/runner/work/front_end_vitraglass/front_end_vitraglass
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5851286Z hint: Using 'master' as the name for the initial branch. This default branch name
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5852558Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5853262Z hint: to use in all of your new repositories, which will suppress this warning,
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5853899Z hint: call:
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5854371Z hint:
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5854847Z hint: 	git config --global init.defaultBranch <name>
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5855291Z hint:
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5855730Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5856431Z hint: 'development'. The just-created branch can be renamed via this command:
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5856977Z hint:
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5857322Z hint: 	git branch -m <name>
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5857688Z hint:
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5858211Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5878120Z Initialized empty Git repository in /home/runner/work/front_end_vitraglass/front_end_vitraglass/.git/
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5891695Z [command]/usr/bin/git remote add origin https://github.com/Arelizoyarce/front_end_vitraglass
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5949350Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5950046Z ##[group]Disabling automatic garbage collection
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5952805Z [command]/usr/bin/git config --local gc.auto 0
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5974911Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5975546Z ##[group]Setting up auth
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.5980146Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.6001698Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.7561243Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.7585122Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.7760406Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.7784753Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.7955990Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.7982717Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.7983484Z ##[group]Fetching the repository
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:02.7990792Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a8d0f7246ba33c010d2ec6d611d64cdb5638b585:refs/remotes/origin/main
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.4473624Z From https://github.com/Arelizoyarce/front_end_vitraglass
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.4474566Z  * [new ref]         a8d0f7246ba33c010d2ec6d611d64cdb5638b585 -> origin/main
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.4477582Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.4478242Z ##[group]Determining the checkout info
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.4479530Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.4484926Z [command]/usr/bin/git sparse-checkout disable
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.4545449Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.4558003Z ##[group]Checking out the ref
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.4561345Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.4879886Z Switched to a new branch 'main'
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.4888550Z branch 'main' set up to track 'origin/main'.
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.4893849Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.4933889Z [command]/usr/bin/git log -1 --format=%H
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.4950332Z a8d0f7246ba33c010d2ec6d611d64cdb5638b585
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.5156543Z ##[group]Run actions/setup-node@v4
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.5156810Z with:
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.5157009Z   node-version: 22
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.5157234Z   cache: npm
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.5157438Z   always-auth: false
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.5157771Z   check-latest: false
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.5159707Z   token: ***
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.5159926Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.7405750Z Found in cache @ /opt/hostedtoolcache/node/22.23.5/x64
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.7407544Z (node:2350) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.7408453Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:03.7410506Z ##[group]Environment details
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:07.3884973Z node: v22.23.5
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:07.3885400Z npm: 10.9.9
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:07.3885685Z yarn: 1.22.22
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:07.3886339Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:07.3898905Z [command]/opt/hostedtoolcache/node/22.23.5/x64/bin/npm config get cache
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:07.7818167Z /home/runner/.npm
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:08.1757680Z Cache hit for: node-cache-Linux-x64-npm-f42635ffcb1a03bf8eea2a2f1c62dd8ca3252d9342326203191fc0a63531b5de
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:08.1838258Z (node:2350) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:09.5310996Z Received 0 of 48520300 (0.0%), 0.0 MBs/sec
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:10.5311491Z Received 40131692 of 48520300 (82.7%), 19.1 MBs/sec
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:11.0958733Z Received 48520300 of 48520300 (100.0%), 18.0 MBs/sec
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:11.0959261Z Cache Size: ~46 MB (48520300 B)
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:11.0976886Z [command]/usr/bin/tar -xf /home/runner/work/_temp/61aafbed-15ed-445c-ab01-fb65ea89570f/cache.tzst -P -C /home/runner/work/front_end_vitraglass/front_end_vitraglass --use-compress-program unzstd
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:11.1539136Z Cache restored successfully
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:11.1559533Z Cache restored from key: node-cache-Linux-x64-npm-f42635ffcb1a03bf8eea2a2f1c62dd8ca3252d9342326203191fc0a63531b5de
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:11.1708433Z ##[group]Run npm ci
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:11.1708825Z ^[[36;1mnpm ci^[[0m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:11.1744983Z shell: /usr/bin/bash -e {0}
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:11.1745280Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:14.6770455Z npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.5747388Z 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.5748458Z added 307 packages, and audited 308 packages in 7s
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.5748826Z 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.5749110Z 70 packages are looking for funding
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.5749533Z   run `npm fund` for details
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.5887835Z 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.5888964Z 4 high severity vulnerabilities
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.5889324Z 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.5889564Z To address all issues, run:
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.5890083Z   npm audit fix
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.5890282Z 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.5890442Z Run `npm audit` for details.
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.6229500Z ##[group]Run npm test
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.6229793Z ^[[36;1mnpm test^[[0m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.6249013Z shell: /usr/bin/bash -e {0}
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.6249311Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.6972176Z 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.6972938Z > vitraglass@0.0.0 test
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.6973427Z > vitest run
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:18.6973578Z 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:19.0465662Z 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:19.0467003Z ^[[1m^[[30m^[[46m RUN ^[[49m^[[39m^[[22m ^[[36mv5.1.0 ^[[39m^[[90m/home/runner/work/front_end_vitraglass/front_end_vitraglass^[[39m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:19.0467380Z 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.0989610Z  ^[[32m✓^[[39m src/context/AuthContext.test.jsx ^[[2m(^[[22m^[[2m3 tests^[[22m^[[2m)^[[22m^[[32m 91^[[2mms^[[22m^[[39m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.1389345Z  ^[[32m✓^[[39m src/services/cotizacion.service.test.js ^[[2m(^[[22m^[[2m6 tests^[[22m^[[2m)^[[22m^[[32m 11^[[2mms^[[22m^[[39m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.1985905Z  ^[[32m✓^[[39m src/components/ProtectedRoute.test.jsx ^[[2m(^[[22m^[[2m4 tests^[[22m^[[2m)^[[22m^[[32m 36^[[2mms^[[22m^[[39m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.7315857Z  ^[[32m✓^[[39m src/services/axiosConfig.test.js ^[[2m(^[[22m^[[2m2 tests^[[22m^[[2m)^[[22m^[[32m 5^[[2mms^[[22m^[[39m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.7342163Z 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.7345443Z ^[[2m Test Files ^[[22m ^[[1m^[[32m4 passed^[[39m^[[22m^[[90m (4)^[[39m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.7346747Z ^[[2m      Tests ^[[22m ^[[1m^[[32m15 passed^[[39m^[[22m^[[90m (15)^[[39m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.7347316Z ^[[2m   Start at ^[[22m 15:33:19
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.7349957Z ^[[2m   Duration ^[[22m 1.68s^[[2m (environment 69%, setup 15%, transform 6%, import 5%, tests 4%, worker 1%)^[[22m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.7362184Z 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.7612273Z ##[group]Run npm run build
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.7612555Z ^[[36;1mnpm run build^[[0m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.7631722Z shell: /usr/bin/bash -e {0}
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.7632027Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.8318800Z 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.8320068Z > vitraglass@0.0.0 build
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.8320476Z > vite build
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.8320580Z 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.9851770Z ^[[36mvite v8.3.0 ^[[32mbuilding client environment for production...^[[36m^[[39m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:20.9941903Z transforming...
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.3725384Z ✓ 11738 modules transformed.
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.4710781Z rendering chunks...
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.5654629Z computing gzip size...
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.5740791Z dist/index.html                                0.46 kB │ gzip:   0.29 kB
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.5741366Z dist/assets/background_login-AbMd5ubL.png  2,284.26 kB
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.5742001Z dist/assets/index--X-5Qudu.css                 1.77 kB │ gzip:   0.80 kB
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.5742721Z dist/assets/index-CE-ge9Zg.js                675.75 kB │ gzip: 210.89 kB
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.5743024Z 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.6547080Z ^[[33m[plugin builtin:vite-reporter] 
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.6547781Z (!) Some chunks are larger than 500 kB after minification. Consider:
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.6548273Z - Using dynamic import() to code-split the application
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.6548954Z - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.6549732Z - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.^[[39m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.9488339Z ^[[32m✓ built in 963ms^[[39m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.9881940Z ##[group]Run echo "Versión candidata compilada; despliegue en nube gestionado en Vercel."
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.9882512Z ^[[36;1mecho "Versión candidata compilada; despliegue en nube gestionado en Vercel."^[[0m
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.9901382Z shell: /usr/bin/bash -e {0}
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.9901702Z ##[endgroup]
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:21.9941621Z Versión candidata compilada; despliegue en nube gestionado en Vercel.
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.0015952Z Post job cleanup.
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.0957420Z (node:2518) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.0958577Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.0960889Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-f42635ffcb1a03bf8eea2a2f1c62dd8ca3252d9342326203191fc0a63531b5de, not saving cache.
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.1071317Z Post job cleanup.
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.1676748Z [command]/usr/bin/git version
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.1705995Z git version 2.56.1
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.1731901Z Temporarily overriding HOME='/home/runner/work/_temp/37e0f99f-e413-4c90-9987-3aef20675481' before making global git config changes
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.1733265Z Adding repository directory to the temporary git global config as a safe directory
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.1735723Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/front_end_vitraglass/front_end_vitraglass
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.1762734Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.1787126Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.1983705Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.2001027Z http.https://github.com/.extraheader
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.2008635Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.2048503Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.2215143Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.2235741Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.2520611Z Cleaning up orphan processes
+Pruebas, compilación y versión candidata (CI/CD)	UNKNOWN STEP	2026-11-20T15:33:22.2765953Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
