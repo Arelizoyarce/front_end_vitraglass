@@ -1,6 +1,12 @@
 # VitraGlass — Frontend (vitraglass)
 
-Aplicación web frontend para la automatización del módulo de cotización de la vidriería **VitraGlass**. Desarrollada en **React**, consume los servicios REST del backend (Spring Boot) para gestionar clientes, cotizaciones, pedidos y el catálogo de vidrios.
+[![CI/CD Pipeline](https://github.com/Arelizoyarce/front_end_vitraglass/actions/workflows/ci.yml/badge.svg)](https://github.com/Arelizoyarce/front_end_vitraglass/actions/workflows/ci.yml)
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-000000?style=flat&logo=vercel&logoColor=white)](https://frontendvitraglass.vercel.app)
+[![Release Candidate](https://img.shields.io/badge/Release-v0.1.0--rc%20(APF3)-2563EB?style=flat&logo=git&logoColor=white)](https://github.com/Arelizoyarce/front_end_vitraglass)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
+
+Aplicación web frontend para la automatización del módulo de cotización de la vidriería **VitraGlass**. Desarrollada en **React (Vite)**, consume los servicios REST del backend (Spring Boot) para gestionar clientes, cotizaciones, pedidos y el catálogo de vidrios.
 
 ## 1. Tecnologías
 
@@ -62,7 +68,7 @@ vitraglass/
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/Arelizoyarce/front_end_vitragrass.git
+git clone https://github.com/Arelizoyarce/front_end_vitraglass.git
 cd vitraglass
 
 # Instalar dependencias
@@ -80,7 +86,10 @@ Crear un archivo `.env` en la raíz con:
 
 ```
 VITE_API_URL=http://localhost:8080/api
+VITE_USE_MOCKS=false
 ```
+
+> **Nota:** Para probar el frontend de forma independiente sin el backend levantado, puede configurarse `VITE_USE_MOCKS=true`.
 
 ## 5. Flujo de trabajo con Git
 
@@ -106,6 +115,8 @@ git push origin feat/nombre-funcionalidad
 - Vargas Huaman, Frank Emiliano — (U23243651)
 - Juárez Huarcaya, Jhair Luis Ángel — (U22224474)
 
+---
+
 ## 7. Integración Continua con GitHub Actions (Práctica N.° 13 - Semana 13)
 
 ### 7.1. Propósito del Flujo Automatizado
@@ -126,7 +137,7 @@ Garantizar la estabilidad, integridad y calidad del frontend de **VitraGlass** a
 
 ### 7.4. Respuestas Técnicas a la Actividad 6 de la Guía
 * **1. ¿Qué evento activa el workflow?**  
-  El workflow está configurado para activarse automáticamente ante dos eventos de GitHub: cualquier `push` enviado hacia cualquier rama del repositorio y ante la apertura o actualización de un `pull_request`. Esto asegura validación continua tanto en el desarrollo sobre ramas aisladas como en la fase de integración previa a la rama principal.
+  El workflow está configurado para activarse automáticamente ante dos eventos de GitHub: cualquier `push` enviado hacia la rama `main` y ante la apertura o sincronización de un `pull_request` dirigido a `main`. Esto asegura validación continua tanto en el desarrollo sobre ramas aisladas como en la fase de integración previa a la rama principal.
 * **2. ¿Qué verifica la prueba automatizada?**  
   Verifica de forma aislada y determinista las reglas fundamentales del frontend:
   1. Que las rutas protegidas no sean accesibles para usuarios sin autenticación o con rol insuficiente.
@@ -137,14 +148,73 @@ Garantizar la estabilidad, integridad y calidad del frontend de **VitraGlass** a
   Un **commit** es una confirmación estática que registra una instantánea de cambios en el historial de Git (código fuente y metadatos del autor). Una **ejecución de Actions** es un proceso dinámico de cómputo en la nube: GitHub levanta una máquina virtual efímera (Ubuntu), clona el repositorio en el estado de ese commit, descarga dependencias, compila y ejecuta las pruebas de forma aislada para emitir un veredicto de éxito (`Success`) o fracaso (`Failure`).
 * **4. ¿Qué ventaja ofrece detectar un error antes de integrar más cambios?**  
   Permite aislar la causa raíz de inmediato con un costo de corrección mínimo (*shift-left testing*). Si se integra un cambio defectuoso a `main`, se contamina la base compartida, afectando a los demás integrantes del equipo e incrementando drásticamente el tiempo de depuración. La detección temprana garantiza que solo código probado y estable forme parte del producto entregable.
+
 ---
 
 ## 8. Entrega Continua (CD), Despliegue en la Nube y Versión Candidata (APF3 - Semana 15)
 
-- **Estado de versión:** Versión candidata (`v0.x` / rama `main`) lista para validación funcional y revisión.
-- **Entorno en la nube (CD):** Frontend desplegado en Vercel para prueba en la nube: [https://frontendvitraglass.vercel.app](https://frontendvitraglass.vercel.app).
-- **Flujo CI/CD:** GitHub Actions ejecuta las pruebas unitarias y la compilación (`npm test` y `npm run build` en `.github/workflows/ci.yml`), mientras que la publicación en la nube en Vercel mantiene disponible la versión candidata para revisión.
-- **Trazabilidad de incidencias (Issues):**
-  - `#45`: Configuración de entrega continua (CD) y despliegue en la nube.
-  - `#46`: Actualización de `README.md` con URL en nube y estado de versión candidata.
-  - `#47`: Validación de flujo de autenticación JWT y cotizaciones en entorno de nube.
+### 8.1. Propósito, Estado de Versión Candidata y Entorno en la Nube
+Para el hito **APF3 (Semana 15)** de la asignatura *Herramientas de Desarrollo*, el equipo consolidó la integración continua y configuró la **Entrega Continua (CD)** hacia la plataforma en la nube **Vercel**, dejando disponible una versión candidata estable (`Release Candidate v0.1.0-rc`) para auditoría técnica, pruebas funcionales por roles y evaluación académica.
+
+* **URL de Producción en la Nube:** [https://frontendvitraglass.vercel.app](https://frontendvitraglass.vercel.app)
+* **Plataforma de Despliegue (CD):** Vercel Edge Network
+* **Estado de la Versión:** `v0.1.0-rc` (Rama `main` consolidada)
+* **Mecanismo de Despliegue Continuo (CD):** Vercel se encuentra enlazado al repositorio de GitHub mediante webhooks automáticos. Cada commit o Pull Request validado e integrado en la rama `main` dispara de forma inmediata el proceso de construcción (*bundling*) y propagación global de artefactos estáticos en la red perimetral de Vercel en ~23 segundos, garantizando *Zero-Downtime Deployment*.
+
+```
+[ Desarrollador ] ──> git push / PR ──> [ GitHub Actions (CI) ]
+                                                │ (npm ci, test, build)
+                                                ▼
+                                         [ Rama `main` ]
+                                                │ (Webhook CD)
+                                                ▼
+                                       [ Vercel Cloud (CD) ] ──> https://frontendvitraglass.vercel.app
+```
+
+### 8.2. Matriz de Trazabilidad de Incidencias (Issues APF3 - Criterio 8.2 Rúbrica)
+En cumplimiento estricto del acápite **8.2 (Evidencias obligatorias)** de los lineamientos del proyecto, a continuación se detalla la relación bidireccional entre las incidencias (*Issues*), los responsables, los commits/PRs de resolución y el resultado funcional obtenido:
+
+| Issue # | Título / Requerimiento Técnico | Tipo | Responsable | Commit / PR Vinculado | Estado | Resultado / Criterio de Aceptación |
+|:---:|---|:---:|:---:|:---:|:---:|---|
+| **#45** | Configurar entrega continua (CD) y despliegue en la nube | DevOps / CD | Jhair Juárez (`@jhair78`) | Commit [`1c9605f`](https://github.com/Arelizoyarce/front_end_vitraglass/commit/1c9605fc4ec290a4ff728caf14a6bc42e03f1d01) | **Cerrado** (Done) | Workflow `.github/workflows/ci.yml` actualizado con job `Pruebas, compilación y versión candidata (CI/CD)`. Se habilitó la vinculación con Vercel para despliegue automatizado ante cada integración en `main`. |
+| **#46** | Actualizar `README.md` con URL de entorno en nube y estado de versión candidata | Documentación | Jhair Juárez (`@jhair78`) / Frank Vargas (`@frankitoromas-tech`) | Commit [`b0df8b9`](https://github.com/Arelizoyarce/front_end_vitraglass/commit/b0df8b95c4b8ad8d65f16f64acd5c192a18a4801) / PR Docs | **Cerrado** (Done) | Documentación técnica enriquecida con badges de estado, matriz de incidencias, enlace al entorno cloud en Vercel, credenciales de prueba y arquitectura de ejecución. |
+| **#47** | Validar flujo de autenticación JWT y cotizaciones en el entorno de nube | QA / Pruebas Cloud | Jhair Juárez (`@jhair78`) | Validación en Vercel [`frontendvitraglass.vercel.app`](https://frontendvitraglass.vercel.app) | **Cerrado** (Done) | Verificación exitosa en navegador: carga de la SPA en nube, inicio de sesión por roles (`ADMIN` y `VENDEDOR`), almacenamiento del token en `localStorage` y ruteo protegido sin caídas de servidor. |
+| **#19** | Servicio de cálculo de cotizaciones y endpoints REST | Backend / Feature | Frank Vargas (`@frankitoromas-tech`) | PR [#21](https://github.com/Arelizoyarce/front_end_vitraglass/pull/21) / Commit `863d29d` | **Cerrado** (Merged) | Algoritmo de cálculo de área ($m^2$), recargos por acabados y persistencia relacional de cotizaciones y detalles en MySQL. |
+| **#17** | Endpoints REST para catálogo y administración de vidrios | Backend / Feature | Joseph Silva (`@josephsilva`) | PR [#20](https://github.com/Arelizoyarce/front_end_vitraglass/pull/20) / Commit `a521420` | **Cerrado** (Merged) | Capa CRUD completa para gestión de vidrios (precios por metro cuadrado, grosor en mm y activación lógica). |
+| **#24** | Endpoints REST y capa de servicios de clientes | Backend / Feature | Cynthia Oyarce (`@Arelizoyarce`) | PR [#29](https://github.com/Arelizoyarce/front_end_vitraglass/pull/29) / Commit `b17856b` | **Cerrado** (Merged) | Servicios de consulta y registro de clientes comerciales con validación de datos de contacto. |
+| **#7, #8** | Seguridad Spring Security, JwtFilter y controladores de usuarios | Backend / Security | Renzo More (`@renzomore`) | PR [#22](https://github.com/Arelizoyarce/front_end_vitraglass/pull/22) / Commit `0252859` | **Cerrado** (Merged) | Interceptor de seguridad HTTP, validación de firmas JWT y endpoints de autenticación y roles de usuario. |
+| **#1, #2** | Modelo entidad-relación y servicio de gestión de pedidos | Backend / Feature | Jhair Juárez (`@jhair78`) | PR [#27](https://github.com/Arelizoyarce/front_end_vitraglass/pull/27), PR [#30](https://github.com/Arelizoyarce/front_end_vitraglass/pull/30) | **Cerrado** (Merged) | Entidades JPA de pedidos, trazabilidad de estados (`COTIZADO`, `EN_PROCESO`, `ENTREGADO`) y repositorio de auditoría. |
+| **#3, #4** | Generación de boletas en PDF y despacho automatizado por correo | Backend / Integración | Frank Vargas (`@frankitoromas-tech`) | PR [#31](https://github.com/Arelizoyarce/front_end_vitraglass/pull/31), PR [#33](https://github.com/Arelizoyarce/front_end_vitraglass/pull/33) | **Cerrado** (Merged) | Pipeline de renderizado de boletas PDF comerciales y motor SMTP asíncrono para notificación al cliente. |
+
+### 8.3. Credenciales y Guía de Validación en el Entorno Cloud
+
+Para facilitar la revisión por parte del docente y la comunidad académica, el despliegue en Vercel cuenta con cuentas de prueba preconfiguradas que permiten auditar los dos perfiles principales del sistema:
+
+| Perfil / Rol | Correo Electrónico | Contraseña de Prueba | Permisos y Vistas Accesibles | Restricciones de Seguridad |
+|---|---|:---:|---|---|
+| **Administrador (`ADMIN`)** | `admin@vitroglass.com` | `admin123` | • Acceso global al sistema.<br>• Visualización consolidada de **todas** las cotizaciones y pedidos en `/dashboard`.<br>• CRUD completo de usuarios en `/admin/usuarios`.<br>• Catálogo maestro de vidrios en `/admin/vidrios`. | Sin restricciones. Control total sobre el catálogo y usuarios. |
+| **Vendedor (`VENDEDOR`)** | `sofia@vitroglass.com`<br>*(o `carlos@vitroglass.com`)* | `vendedor123` | • Acceso exclusivo al Dashboard personal (`/dashboard`).<br>• Registro dinámico de cotizaciones en `/nueva-cotizacion`.<br>• Cálculo en tiempo real de áreas y presupuestos. | **Bloqueo estricto por `ProtectedRoute.jsx`:** Cualquier intento de acceder a `/admin/usuarios` o `/admin/vidrios` es interceptado y redirigido al Dashboard. |
+
+#### Arquitectura de Ejecución de la Previsualización (Dual-Engine)
+El frontend desplegado en Vercel opera bajo una arquitectura desacoplada de alto rendimiento:
+1. **Modo Previsualización Cloud Autónoma (Mock Engine):**  
+   Para permitir que evaluadores y docentes naveguen por la aplicación en cualquier momento sin requerir una instancia de base de datos MySQL local encendida, el frontend incorpora una capa de servicios desacoplada (`src/services/mocks/`) con mutaciones en memoria y latencia simulada (`delay()`). Esta capa valida de forma determinista el ciclo completo de autenticación JWT, persistencia de sesión en `localStorage`, control de roles mediante `ProtectedRoute.jsx` y operaciones sobre el catálogo de vidrios y cotizaciones.
+2. **Modo Producción Conectado (Full Backend API):**  
+   Al configurar las variables de entorno en Vercel:
+   ```env
+   VITE_API_URL=https://<api-host>/api
+   VITE_USE_MOCKS=false
+   ```
+   El interceptor global de Axios redirige el 100% de las peticiones HTTP hacia el backend Spring Boot, inyectando de forma automática la cabecera `Authorization: Bearer <token>` para validar tokens criptográficos emitidos por el servidor.
+
+### 8.4. Evidencias de Ejecución del Pipeline y Auditoría de Calidad
+* **Historial de Ejecuciones CI/CD en GitHub:** [https://github.com/Arelizoyarce/front_end_vitraglass/actions](https://github.com/Arelizoyarce/front_end_vitraglass/actions)
+* **Despliegue Activo en Vercel:** [https://frontendvitraglass.vercel.app](https://frontendvitraglass.vercel.app)
+* **Comandos de Auditoría Local:**
+  ```bash
+  # Ejecutar suite de pruebas unitarias
+  npm test
+
+  # Verificar compilación de producción para versión candidata
+  npm run build
+  ```
