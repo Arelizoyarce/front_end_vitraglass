@@ -242,24 +242,90 @@ El proyecto **VitraGlass** implementa un modelo de gobernanza técnica y documen
 
 ---
 
-### 9.2. Estructura de Sustentación Oral y Diapositivas (PPT 16:9)
+### 9.2. Estructura de Sustentación Oral y Ponencias Individuales (Guion Cronometrado APF3)
 
-La defensa del proyecto sigue una estructura modular y cronometrada para garantizar el dominio individual y la participación equitativa de todo el equipo:
+La defensa del proyecto sigue un protocolo cronometrado de **15:00 minutos netos (3:00 minutos exactos por integrante)** para garantizar el dominio individual y la participación equitativa de todo el equipo (Sección 3.2, 3.3 y 11 de la rúbrica UTP). El guion maestro completo y descargable se encuentra en [`docs/presentaciones/SUSTENTACION_APF3_GUIA_RAPIDA.md`](docs/presentaciones/SUSTENTACION_APF3_GUIA_RAPIDA.md).
 
-```
-[Slide 01] Carátula y Presentación de Equipo -----------> Renzo More   (00:00 - 00:45)
-[Slide 02] Problemática Operativa y Modelo Negocio ------> Renzo More   (00:45 - 02:00)
-[Slide 03] Arquitectura Git y Gestión de Ramas ----------> Renzo More   (02:00 - 03:15)
-[Slide 04] Arquitectura Frontend (React + Vite) ---------> Cynthia Oyarce (03:15 - 04:45)
-[Slide 05] Flujo de Pull Requests y Revisiones ----------> Cynthia Oyarce (04:45 - 06:30)
-[Slide 06] Módulo de Cotizaciones y Reglas de Negocio ---> Joseph Silva (06:30 - 08:00)
-[Slide 07] Seguridad JWT y Control de Acceso (RBAC) ------> Joseph Silva (08:00 - 09:45)
-[Slide 08] Pipeline de Integración Continua (CI) --------> Frank Vargas  (09:45 - 11:30)
-[Slide 09] Ingeniería de Pruebas: Run #7 vs Run #8 ------> Frank Vargas  (11:30 - 13:00)
-[Slide 10] Gestión de Incidencias (Issues #45-#47) ------> Jhair Juárez  (13:00 - 14:15)
-[Slide 11] Entrega Continua y Despliegue en Vercel ------> Jhair Juárez  (14:15 - 15:15)
-[Slide 12] Conclusiones, Rúbrica y Roadmap Docker -------> Jhair Juárez  (15:15 - 16:00)
-```
+#### Cronograma General de Intervenciones (15 min)
+
+| Minutos | Integrante (Expositor) | Código UTP | Rol Técnico Principal | Diapositivas PPT 16:9 |
+| :---: | :--- | :---: | :--- | :---: |
+| **00:00 - 03:00** | **More Manrique, Renzo José** | `U22228363` | Control de Versiones, Git Flow & DevSecOps | Slides 01, 02 y 03 |
+| **03:00 - 06:00** | **Oyarce Franco, Cynthia Areliz** | `U23208307` | Arquitectura Frontend & Gestión de Pull Requests | Slides 04 y 05 |
+| **06:00 - 09:00** | **Silva Saavedra, Joseph Gabriel** | `U22219400` | Módulos de Negocio, Cotizador & Seguridad RBAC | Slides 06 y 07 |
+| **09:00 - 12:00** | **Vargas Huamán, Frank Emiliano** | `U23243651` | Pipeline CI, Suite Vitest (15 Tests) & Resiliencia | Slides 08 y 09 |
+| **12:00 - 15:00** | **Juárez Huarcaya, Jhair Luis Ángel** | `U22224474` | Gestión de Incidencias (#45-#47) & Despliegue Cloud Vercel | Slides 10, 11 y 12 |
+| **15:00 - 20:00** | **Todo el Equipo** | — | Ronda de Defensa Técnica ante Preguntas del Jurado | Todas las evidencias |
+
+---
+
+#### 🎙️ Guion de Ponencia 1: Renzo José More Manrique (00:00 - 03:00)
+* **Slides Asignadas:** Slide 01 (Carátula Institucional), Slide 02 (Problemática Operativa y Modelo de Negocio), Slide 03 (Arquitectura Git Flow y Commits).
+* **Minuto 1 (00:00 - 01:00) — Apertura y Presentación Institucional:**
+  > *"Buenas tardes estimada docente Ing. Jeymi Valdivia y compañeros presentes. Somos el equipo a cargo de **VitraGlass**, plataforma web concebida para la automatización operativa y cotización dinámica en la industria vidriera. El equipo está conformado por Cynthia Oyarce, Joseph Silva, Frank Vargas, Jhair Juárez y quien les habla, Renzo More. Hoy sustentamos el Avance de Proyecto Final 3 (APF3) correspondiente a la Semana 15. Organizamos esta exposición en 15 minutos cronometrados, asignando 3 minutos estrictos por integrante para demostrar dominio técnico individual y cumplimiento integral de la rúbrica institucional."*
+* **Minuto 2 (01:00 - 02:00) — Problemática Operativa y Modelo de Negocio:**
+  > *"En el sector vidriero tradicional, el 90% de mypes calcula presupuestos en cuadernos o plantillas aisladas de Excel. Esto genera tres graves cuellos de botella: demoras de 24 a 48 horas en calcular presupuestos de vidrio templado o carpintería de aluminio; errores humanos frecuentes en fórmulas de área y m² que provocan pérdidas económicas; y nula trazabilidad de pedidos. VitraGlass soluciona esta fricción mediante un motor web reactivo que calcula en milisegundos el importe exacto según tipo de cristal, espesor y perfiles, reduciendo el tiempo de emisión en un 80% con disponibilidad cloud 24/7."*
+* **Minuto 3 (02:00 - 03:00) — Gobernanza Git Flow, Convenciones y DevSecOps:**
+  > *"Para gobernar el desarrollo aplicamos una rigurosa arquitectura de control de versiones bajo **GitHub Flow**. Nuestra rama principal `main` está blindada con Branch Protection Rules: prohibimos terminantemente los pushes directos. Todo trabajo se realiza en ramas de funcionalidad `feat/*` o corrección `fix/*`. Implementamos el estándar internacional de **Conventional Commits** (`feat:`, `fix:`, `ci:`, `docs:`, `test:`), asociando cada confirmación al ticket correspondiente mediante la directiva `Closes #XX`. Asimismo, en mi intervención técnica en la rama `fix/issue-48-devsecops-backend` (commit `27df8a4`), externalicé las credenciales de base de datos y correo hacia variables de entorno, erradicando secretos en texto plano. Cedo la palabra a mi compañera Cynthia Oyarce, quien expondrá la arquitectura frontend y el flujo de Pull Requests."*
+
+---
+
+#### 🎙️ Guion de Ponencia 2: Cynthia Areliz Oyarce Franco (03:00 - 06:00)
+* **Slides Asignadas:** Slide 04 (Arquitectura React 18 + Vite 5), Slide 05 (Pull Requests, Code Review y PR #48).
+* **Minuto 1 (03:00 - 04:00) — Arquitectura Tecnológica SPA: React 18 + Vite 5:**
+  > *"Muchas gracias Renzo. Como líder de frontend y administradora del repositorio, estructuré una Single Page Application moderna y altamente escalable utilizando **React 18** empaquetado con **Vite 5**. Elegimos Vite frente a herramientas heredadas como Webpack debido a que procesa módulos ECMAScript nativos en memoria, logrando tiempos de arranque en desarrollo inferiores a 300 ms y compilaciones de producción altamente optimizadas mediante Rollup. Para la experiencia visual integramos **Material UI v5**, garantizando consistencia en componentes corporativos, paleta sobria y diseño responsivo para su utilización tanto en talleres como en mostradores comerciales."*
+* **Minuto 2 (04:00 - 05:00) — Modularidad, Estado Global e Interceptores HTTP:**
+  > *"La estructura del directorio `src/` obedece al principio de separación de responsabilidades: desacoplamos las vistas operativas en `pages/`, los elementos reutilizables en `components/` y la capa de infraestructura en `services/`. La gestión del estado global se resolvió mediante **React Context API** a través de `AuthContext.jsx`, administrando la persistencia de sesión sin sobrecargar la aplicación con dependencias pesadas como Redux. Asimismo, encapsulamos las peticiones HTTP en una instancia centralizada de **Axios** en `axiosConfig.js`, la cual intercepta de forma asíncrona cada requerimiento para inyectar la cabecera `Authorization: Bearer <token>` y controlar errores HTTP 401 de expiración de sesión."*
+* **Minuto 3 (05:00 - 06:00) — Políticas de Code Review y el Pull Request Medular #48:**
+  > *"En cumplimiento con la Sección 8 de los lineamientos UTP, ningún cambio se incorpora a producción sin un **Pull Request** formal con revisión por pares (*Peer Review*). En pantalla observan nuestro Pull Request medular **#48**, el cual integró las directivas del APF3: enriquecimiento del README, matriz de trazabilidad y resolución de incidencias. Este PR posee una descripción exhaustiva de más de 5,000 caracteres, enlaza los tickets resueltos mediante `Closes #45`, `Closes #46` y `Refs #47`, y solo fue fusionado tras obtener la aprobación unánime de los compañeros y la luz verde automática del pipeline de CI. Aplicamos la estrategia **Squash and Merge** para condensar los commits intermedios y preservar un historial lineal y limpio en `main`. Doy el pase a mi compañero Joseph Silva, quien explicará el motor de cotizaciones y la seguridad RBAC."*
+
+---
+
+#### 🎙️ Guion de Ponencia 3: Joseph Gabriel Silva Saavedra (06:00 - 09:00)
+* **Slides Asignadas:** Slide 06 (Motor de Cotizaciones y Reglas de Negocio), Slide 07 (Seguridad RBAC, JWT y Rutas Protegidas).
+* **Minuto 1 (06:00 - 07:00) — Motor Reactivo de Cotizaciones (`NewQuote.jsx`):**
+  > *"Buenas tardes docente. Como responsable de la lógica de negocio y las reglas de dominio, les presento el núcleo funcional del aplicativo: el módulo de **Nueva Cotización**. En la interfaz implementada en `NewQuote.jsx`, el vendedor registra al cliente capturando RUC o DNI y selecciona las especificaciones del vidrio: tipo —ya sea Templado, Laminado, Crudo o Arenado—, espesor comercial de 4 a 10 milímetros y dimensiones en milímetros. Mediante hooks de React, el sistema recalcula en tiempo real el área superficial en m² y el importe total en menos de 10 milisegundos, incorporando costos base de cristal, perfiles de aluminio y mano de obra sin recargar la página."*
+* **Minuto 2 (07:00 - 08:00) — Flujo de Conversión de Cotizaciones a Pedidos:**
+  > *"Una vez validado el presupuesto con el cliente, el sistema permite su emisión formal y persistencia. La cotización se almacena con estado `PENDIENTE` y se genera una vista detallada para su conversión inmediata a orden de trabajo o pedido formal (`/pedidos`). Esta reactividad elimina el desfase operativo entre el mostrador de ventas y el taller de corte de vidrio, permitiendo que los operarios visualicen de inmediato los pedidos listos para corte y optimicen el aprovechamiento de las planchas de vidrio."*
+* **Minuto 3 (08:00 - 09:00) — Seguridad JWT, Control de Acceso por Roles (RBAC) y Rutas Administrativas:**
+  > *"En el plano de seguridad, implementamos una arquitectura de **Control de Acceso Basado en Roles (RBAC)** respaldada por tokens JWT criptográficos firmados con HMAC-SHA256. Configuramos dos perfiles estrictamente segregados: el perfil **ADMINISTRADOR**, con privilegios plenos para gestionar usuarios en `AdminUsuarios.jsx`, actualizar la matriz de precios base en `AdminVidrios.jsx` y supervisar reportes consolidados; y el perfil **VENDEDOR**, orientado a la operativa de campo: solo puede cotizar y visualizar sus propios pedidos. Diseñamos el componente guardián `ProtectedRoute.jsx`: si un vendedor intenta escribir manualmente en la URL `/admin/usuarios`, el guardián analiza los claims del token y lo redirige de inmediato a su Dashboard con acceso denegado. Asimismo, en la incidencia técnica **Issue #50**, saneé la sintaxis JSX en `App.jsx` para garantizar que la ruta `/admin/usuarios` quede formalmente registrada y activa en el árbol de rutas bajo el guardián de administrador. A continuación, mi compañero Frank Vargas sustentará la ingeniería del pipeline de Integración Continua."*
+
+---
+
+#### 🎙️ Guion de Ponencia 4: Frank Emiliano Vargas Huamán (09:00 - 12:00)
+* **Slides Asignadas:** Slide 08 (Pipeline CI YAML en GitHub Actions), Slide 09 (Ingeniería de Pruebas y Resiliencia Run #7 vs Run #8).
+* **Minuto 1 (09:00 - 10:00) — Arquitectura del Pipeline de Integración Continua:**
+  > *"Buenas tardes docente. Como responsable del aseguramiento de calidad y automatización DevOps, diseñé el pipeline de **Integración Continua (CI)** mediante **GitHub Actions**, adoptando el enfoque industrial Shift-Left Testing para interceptar defectos antes de que alcancen ramas compartidas. El workflow se activa de forma automática ante cada evento de `push` o `pull_request` dirigido a la rama `main`. Cada ejecución provisiona una máquina virtual aislada y efímera `ubuntu-latest` con Node.js 22. Una decisión crítica de ingeniería fue implementar `npm ci` en lugar de `npm install`: esto fuerza una instalación determinista basada en las sumas de verificación del archivo `package-lock.json`, impidiendo que discrepancias de dependencias contaminen el entorno de ejecución."*
+* **Minuto 2 (10:00 - 11:00) — Batería de Pruebas Unitarias Reales con Vitest:**
+  > *"Erradicamos completamente los denominados 'tests cosméticos' o de relleno. En su lugar, programamos **15 pruebas unitarias reales** ejecutadas sobre **Vitest** y **React Testing Library**, estructuradas en 3 suites fundamentales: 1) `axiosConfig.test.js`: prueba la inyección correcta del token Bearer en los encabezados HTTP y la captura elegante de errores 401; 2) `AuthContext.test.jsx`: valida el flujo completo de inicio de sesión, el cierre seguro y la persistencia de claims en el almacenamiento del navegador; y 3) `ProtectedRoute.test.jsx`: monta rutas simuladas con `MemoryRouter` para comprobar que usuarios anónimos o no autorizados sean efectivamente expulsados hacia la pantalla de login. Finalmente, el pipeline ejecuta `npm run build` con Vite para garantizar cero errores sintácticos de empaquetado."*
+* **Minuto 3 (11:00 - 12:00) — Demostración Forense de Resiliencia: Run #7 vs Run #8:**
+  > *"En cumplimiento con la Sección 8.2 de la rúbrica, demostramos la resiliencia de nuestro Safe Gate analizando un fallo real y su remediación controlada. En el **Run #7**, como aprecian en la captura en rojo, el pipeline detuvo la integración marcando estado Failure: se detectó un rechazo asíncrono no controlado en los mocks del interceptor de Axios al ejecutarse en el runner headless de Ubuntu. El Safe Gate cumplió su propósito: impidió que código inestable ingresara a `main`. Aplicamos la Regla de Hierro de Depuración, diagnosticamos la causa raíz en el manejo de promesas y emitimos el commit correctivo `668c36b`. En el **Run #8**, como observan a la derecha, el pipeline corrió impecable en 38 segundos, con el 100% de las 15 pruebas en verde. Cedo la palabra a Jhair Juárez, quien abordará la gestión de incidencias, el despliegue en Vercel y la hoja de ruta Docker."*
+
+---
+
+#### 🎙️ Guion de Ponencia 5: Jhair Luis Ángel Juárez Huarcaya (12:00 - 15:00)
+* **Slides Asignadas:** Slide 10 (Gestión de Incidencias #45-#47), Slide 11 (Entrega Continua en Vercel), Slide 12 (Evaluación Rúbrica y Docker Semana 18).
+* **Minuto 1 (12:00 - 13:00) — Gestión y Trazabilidad de Incidencias (GitHub Issues):**
+  > *"Muchas gracias Frank. Para satisfacer la Sección 8.1 y la Sección 9 de los lineamientos UTP, administramos el ciclo de vida de defectos y mejoras mediante **GitHub Issues**, estableciendo trazabilidad bidireccional entre requerimiento, responsable y código. Registramos y cerramos tres incidencias técnicas clave para este APF3: el **Issue #45**, enfocado en la configuración de Entrega Continua (CD) y despliegue cloud, resuelto mediante el commit `1c9605f`; el **Issue #46**, orientado a enriquecer el `README.md` con credenciales de prueba para la docente y badges dinámicos de CI, resuelto con el commit `b0df8b9`; y el **Issue #47**, enfocado en optimizar el servicio de cotizaciones y erradicar fugas de memoria en descargas de PDF, resuelto con el PR #48. Cada issue fue cerrado de forma atómica mediante la sintaxis nativa `Closes #XX` en los mensajes de commit."*
+* **Minuto 2 (13:00 - 14:00) — Entrega Continua (CD) y Despliegue Cloud en Vercel:**
+  > *"Respecto a la Entrega Continua exigida por la rúbrica, interconectamos el repositorio con la infraestructura perimetral de **Vercel Edge Network**. El flujo opera con automatización absoluta: cada vez que un Pull Request supera las pruebas de Frank y se fusiona en `main`, un webhook notifica a Vercel, el cual provisiona un contenedor de compilación, ejecuta `npm run build` en 23 segundos y publica la nueva versión en su red CDN Anycast global. La aplicación se encuentra activa y abierta para su evaluación en la URL oficial: `https://frontendvitraglass.vercel.app` bajo protocolo HTTPS y certificado TLS vigente. Hemos dispuesto en el README credenciales preconfiguradas para auditar tanto el perfil de Administrador (`admin@vitroglass.com`) como el de Vendedor (`sofia@vitroglass.com` / `carlos@vitroglass.com`)."*
+* **Minuto 3 (14:00 - 15:00) — Balance de Rúbrica 20/20 y Hoja de Ruta Semana 18 (Docker):**
+  > *"Para concluir, realizamos un balance riguroso frente a la matriz evaluativa de la Sección 11: alcanzamos con solvencia los 20 puntos de la calificación máxima cumpliendo con las incidencias trazables, el pipeline CI con 15 tests, la entrega continua en Vercel, la estabilidad de los 4 módulos funcionales, el informe formal APA 7 de 8 páginas y el dominio técnico demostrado en esta exposición. Asimismo, dejamos trazada la hoja de ruta hacia la Semana 18 (Proyecto Final 40%): ya contamos con la arquitectura multi-stage de Docker para empaquetar el frontend en un Nginx Alpine de menos de 35 MB y orquestarlo mediante `docker-compose.yml` junto al backend Spring Boot y MySQL en red privada. Agradecemos su atención y quedamos a su disposición para la ronda de preguntas."*
+
+---
+
+#### 🛡️ Cheat Sheet: Defensa Rápida ante Preguntas Trampa del Jurado
+
+1. **¿Por qué hay disparidad en la cantidad de commits entre compañeros?**
+   - *Respuesta:* En ingeniería profesional se mide el impacto arquitectónico y la atomicidad del cambio, no el número bruto de commits. Tareas de configuración, seguridad y backend son quirúrgicas (un solo commit bien estructurado resuelve el requerimiento). Además, aplicamos **Squash and Merge** en los PRs, condensando commits de trabajo en unidades limpias. La participación equitativa se comprueba en la matriz de ramas remotas, issues asignados y autoría de código de los 5 miembros.
+2. **¿Guardar el JWT en `localStorage` no es vulnerable a XSS? ¿`ProtectedRoute.jsx` en cliente se puede burlar?**
+   - *Respuesta:* `ProtectedRoute.jsx` es una barrera de navegación y experiencia de usuario (UI), no la seguridad perimetral. Si un usuario manipula el cliente para entrar a `/admin/vidrios`, la vista renderizará vacía porque el backend Spring Security exige un JWT firmado criptográficamente con HMAC-SHA256; sin la clave privada del servidor, cualquier petición es rechazada con HTTP 401/403. Para el Proyecto Final (Semana 18), la unificación con Docker y Nginx incorporará cookies de sesión con banderas `HttpOnly`, `SameSite=Strict` y `Secure`.
+3. **¿Cómo demuestran que las 15 pruebas de Vitest son reales y no de relleno?**
+   - *Respuesta:* Nuestras pruebas no contienen aserciones triviales. Montan el contexto real de React (`AuthContext`), emulan rutas con `MemoryRouter` y comprueban aserciones funcionales sobre encabezados HTTP de Axios (`expect(config.headers.Authorization).toBe('Bearer mock-token')`). La prueba definitiva es el **Run #7 de GitHub Actions**, donde una falla real en el runner headless detuvo el pipeline hasta que fue subsanada en el Run #8.
+4. **Si el despliegue en Vercel falla o introduce un bug en producción, ¿cómo se recupera el sistema?**
+   - *Respuesta:* Vercel implementa despliegues inmutables (*Atomic Deploys*). Cada versión genera un hash único independiente. Ante cualquier defecto imprevisto, se realiza un Instant Rollback en menos de 5 segundos hacia el despliegue anterior desde el dashboard o CLI, sin tiempo de caída (*Zero Downtime*). En el repositorio, se emite un `git revert` atómico sobre el commit causante.
+5. **¿Por qué eligieron Vercel para este APF3 si para el final usarán Docker?**
+   - *Respuesta:* Vercel responde a la necesidad de entregar una versión candidata cloud pública e interactiva con CDN global en tiempo récord (requisito explícito del APF3). Para la Semana 18, donde se integrará la base de datos relacional MySQL y el backend Spring Boot, la contenerización con Docker Compose y Nginx garantizará la portabilidad homogénea entre entornos locales y servidores dedicados.
 
 ---
 

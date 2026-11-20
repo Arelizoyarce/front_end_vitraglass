@@ -14,6 +14,9 @@ dist
 dist-ssr
 *.local
 
+# Render caches
+docs/informes/audit_apa7_visual_inspection/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

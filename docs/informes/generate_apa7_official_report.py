@@ -294,15 +294,24 @@ def add_apa7_table(doc, tbl_num_str, tbl_title_str, col_widths, col_titles, data
         cell.width = col_widths[c_idx]
         tcPr = cell._tc.get_or_add_tcPr()
         
-        # Borde inferior de la cabecera
+        # Borde superior e inferior de la cabecera (Línea 1 y Línea 2 APA 7)
         tcBorders = OxmlElement('w:tcBorders')
+        
+        b_top = OxmlElement('w:top')
+        b_top.set(qn('w:val'), 'single')
+        b_top.set(qn('w:sz'), '12')  # 1.5 pt (Línea 1 APA 7: Borde superior de la tabla)
+        b_top.set(qn('w:space'), '0')
+        b_top.set(qn('w:color'), '1E293B')
+        tcBorders.append(b_top)
+
         b_bot = OxmlElement('w:bottom')
         b_bot.set(qn('w:val'), 'single')
-        b_bot.set(qn('w:sz'), '8')  # 1.0 pt
+        b_bot.set(qn('w:sz'), '8')   # 1.0 pt (Línea 2 APA 7: Borde inferior de la cabecera)
         b_bot.set(qn('w:space'), '0')
         b_bot.set(qn('w:color'), '1E293B')
         tcBorders.append(b_bot)
-        for s in ['top', 'left', 'right']:
+
+        for s in ['left', 'right']:
             b_none = OxmlElement(f'w:{s}')
             b_none.set(qn('w:val'), 'none')
             tcBorders.append(b_none)
@@ -357,6 +366,21 @@ def add_apa7_table(doc, tbl_num_str, tbl_title_str, col_widths, col_titles, data
                 r.font.color.rgb = COLOR_TITLE
             else:
                 r.font.color.rgb = COLOR_TEXT
+
+    # Borde inferior de la tabla (Línea 3 APA 7: 1.5 pt) en la última fila
+    last_row = table.rows[-1]
+    for cell in last_row.cells:
+        tcPr = cell._tc.get_or_add_tcPr()
+        tcBorders = tcPr.find(qn('w:tcBorders'))
+        if tcBorders is None:
+            tcBorders = OxmlElement('w:tcBorders')
+            tcPr.append(tcBorders)
+        b_bot = OxmlElement('w:bottom')
+        b_bot.set(qn('w:val'), 'single')
+        b_bot.set(qn('w:sz'), '12')  # 1.5 pt (Línea 3 APA 7)
+        b_bot.set(qn('w:space'), '0')
+        b_bot.set(qn('w:color'), '1E293B')
+        tcBorders.append(b_bot)
 
     # 4. Nota de la tabla
     p_not = doc.add_paragraph()
@@ -476,7 +500,7 @@ def generate_apa7_document():
     team_widths = [Inches(1.8), Inches(0.9), Inches(1.1), Inches(1.1), Inches(1.6)]
     team_cols = ["Integrante", "Código UTP", "Usuario GitHub", "Rama / Módulo", "Responsabilidad Asignada"]
     team_data = [
-        ["More Manrique, Renzo José", "U22228363", "@Aryi-MM", "fix/security-props", "Saneamiento de propiedades y variables de entorno."],
+        ["More Manrique, Renzo José", "U22228363", "@Aryi-MM", "fix/issue-48-devsecops", "Endurecimiento DevSecOps: variables de MySQL/SMTP (Commit 27df8a4)."],
         ["Oyarce Franco, Cynthia Areliz", "U23208307", "@Arelizoyarce", "feat/apf3-readme", "Arquitectura frontend, revisión de PRs y releases."],
         ["Silva Saavedra, Joseph Gabriel", "U22219400", "@SugaAG", "fix/admin-routes", "Rutas RBAC, catálogo de vidrios y componentes UI."],
         ["Vargas Huamán, Frank Emiliano", "U23243651", "@frankitoromas-tech", "feat/ci-pipeline", "Pipeline CI/CD, suite Vitest y calidad de código."],
@@ -503,26 +527,27 @@ def generate_apa7_document():
 
     add_apa7_heading_2(doc, "2.1 Registro y Categorización de Incidencias en GitHub Issues")
     add_apa7_body_p(doc, 
-        "Conforme a la Sección 8.1 de los lineamientos de la Universidad Tecnológica del Perú (UTP, 2026), el equipo empleó GitHub Issues como sistema centralizado de registro, asignación y seguimiento de requerimientos técnicos. Se definieron tres incidencias formales que abarcan las dimensiones críticas del hito: despliegue en la nube (#45), documentación y catálogo de entregables (#46) y aseguramiento de calidad con pruebas automatizadas (#47).")
+        "Conforme a la Sección 8.1 de los lineamientos de la Universidad Tecnológica del Perú (UTP, 2026), el equipo empleó GitHub Issues y GitHub Projects (Tablero 'Board Team Vitraglass', Proyecto #13) como sistema centralizado de registro, asignación y seguimiento de requerimientos técnicos. Se definieron tres incidencias formales que abarcan las dimensiones críticas del hito: despliegue en la nube (#45), documentación y catálogo de entregables (#46) y aseguramiento de calidad con pruebas automatizadas (#47).")
 
     # Figura 1 APA 7: Issues
     add_apa7_figure(doc, 
         "Figura 1", 
-        "Panel de Registro y Gestión de Incidencias Técnicas en el Repositorio de GitHub",
-        "figura_01_issues.png",
-        "Registro oficial de incidencias #45 (Despliegue CD en Vercel), #46 (Actualización de README con estado de despliegue) y #47 (Validación cloud y pruebas unitarias), con responsables asignados y etiquetas técnicas.")
+        "Panel de GitHub Issues y Tablero Kanban en GitHub Projects (Board Team Vitraglass #13)",
+        "figura_01_issues_and_board_composite.png",
+        "Registro oficial de incidencias (#45, #46, #47) y tablero Kanban con estados 'In Progress' y 'Done' vinculado al PR #48 y PR #49.")
 
     add_apa7_heading_2(doc, "2.2 Trazabilidad de Commits, Pull Requests y Resolución")
     add_apa7_body_p(doc, 
-        "La resolución de las incidencias se gestionó aplicando la directiva de cierre automatizado de GitHub ('Closes #XX'). Cada modificación técnica fue compilada en ramas específicas e integrada a través del Pull Request formal #48, garantizando que el historial del repositorio preserve la trazabilidad entre el problema planteado, el commit ejecutor y la verificación en producción.")
+        "La resolución de las incidencias se gestionó aplicando la directiva de cierre automatizado de GitHub ('Closes #XX'). Cada modificación técnica fue compilada en ramas específicas e integrada a través del Pull Requests formales #48 y #49, garantizando que el historial del repositorio preserve la trazabilidad entre el problema planteado, el commit ejecutor y la verificación en producción.")
 
     # Tabla 2 APA 7: Trazabilidad de Issues
     issues_widths = [Inches(0.6), Inches(1.8), Inches(0.9), Inches(0.9), Inches(1.1), Inches(1.2)]
     issues_cols = ["Issue #", "Título y Descripción", "Tipo", "Responsable", "Commit / PR", "Estado / Verificación"]
     issues_data = [
-        ["#45", "Configurar CD en Vercel Edge", "DevOps / CD", "J. Juárez", "Commit e61b340 (PR #48)", "Cerrado: Despliegue en 23s"],
-        ["#46", "Actualizar README con badges y CD", "Docs", "J. Juárez / F. Vargas", "Commit e61b340 (PR #48)", "Cerrado: Badges y guía de test"],
-        ["#47", "Pruebas unitarias y validación cloud", "QA / Tests", "F. Vargas / J. Juárez", "Commit b588558 (PR #48)", "Cerrado: 15/15 tests pasando"]
+        ["#45", "Configurar CD en Vercel Edge", "DevOps / CD", "J. Juárez", "Commit 1c9605f (PR #48)", "Cerrado: Despliegue en 23s"],
+        ["#46", "Actualizar README con badges y CD", "Docs", "J. Juárez / F. Vargas", "Commit b0df8b9 (PR #48)", "Cerrado: Badges y guía de test"],
+        ["#47", "Pruebas unitarias y validación cloud", "QA / Tests", "F. Vargas / J. Juárez", "Commit b588558 (PR #48)", "Cerrado: 15/15 tests pasando"],
+        ["#48", "Endurecimiento DevSecOps backend", "Seguridad", "R. More", "Commit 27df8a4 (PR #49)", "Cerrado: Variables MySQL/SMTP"]
     ]
     add_apa7_table(doc, 
         "Tabla 2", 

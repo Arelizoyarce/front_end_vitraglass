@@ -202,7 +202,7 @@ Diapositivas: Slide 10 (Issues #45-#47), Slide 11 (Vercel CD) y Slide 12 (Evalua
   > "Respecto a la Entrega Continua exigida por la rúbrica, interconectamos el repositorio con la infraestructura perimetral de **Vercel Edge Network**.
   > El flujo opera con automatización absoluta: cada vez que un Pull Request supera las pruebas de Frank y se fusiona en `main`, un webhook notifica a Vercel, el cual provisiona un contenedor de compilación, ejecuta `npm run build` en **23 segundos** y publica la nueva versión en su red CDN Anycast global.
   > La aplicación se encuentra activa y abierta para su evaluación en la URL oficial: `https://frontendvitraglass.vercel.app` bajo protocolo HTTPS y certificado TLS vigente.
-  > Hemos dispuesto en el README credenciales preconfiguradas para auditar tanto el perfil de Administrador (`admin@vitraglass.pe`) como el de Vendedor (`vendedor@vitraglass.pe`)."
+  > Hemos dispuesto en el README credenciales preconfiguradas para auditar tanto el perfil de Administrador (`admin@vitroglass.com`) como el de Vendedor (`sofia@vitroglass.com` / `carlos@vitroglass.com`)."
 
 #### 📌 Minuto 3 (14:00 - 15:00) — Balance de Rúbrica 20/20 y Hoja de Ruta Semana 18 (Docker)
 * **[Acción Visual]:** Cambiar a **Slide 12**. Señalar la matriz de 20 puntos y los hitos de Docker.
@@ -315,8 +315,8 @@ Si durante la sustentación la docente solicita una demostración en vivo o la r
 
 ### ⚡ Credenciales de Acceso Cloud en Vivo:
 * **URL:** [`https://frontendvitraglass.vercel.app`](https://frontendvitraglass.vercel.app)
-* **Perfil Administrador:** Usuario: `admin@vitraglass.pe` | Clave: `admin123` (Acceso completo: Usuarios, Vidrios, Precios).
-* **Perfil Vendedor:** Usuario: `vendedor@vitraglass.pe` | Clave: `vendedor123` (Acceso restringido: Cotizaciones y Pedidos Propios).
+* **Perfil Administrador:** Usuario: `admin@vitroglass.com` | Clave: `admin123` (Acceso completo: Usuarios, Vidrios, Precios).
+* **Perfil Vendedor:** Usuario: `sofia@vitroglass.com` / `carlos@vitroglass.com` | Clave: `vendedor123` (Acceso restringido: Cotizaciones y Pedidos Propios).
 
 ### 💻 Comandos de Consola para Demostración en Terminal:
 
