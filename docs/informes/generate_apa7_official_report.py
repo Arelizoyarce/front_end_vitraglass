@@ -502,7 +502,7 @@ def generate_apa7_document():
     team_data = [
         ["More Manrique, Renzo José", "U22228363", "@Aryi-MM", "fix/issue-48-devsecops", "Endurecimiento DevSecOps: variables de MySQL/SMTP (Commit 27df8a4)."],
         ["Oyarce Franco, Cynthia Areliz", "U23208307", "@Arelizoyarce", "feat/apf3-readme", "Arquitectura frontend, revisión de PRs y releases."],
-        ["Silva Saavedra, Joseph Gabriel", "U22219400", "@SugaAG", "fix/admin-routes", "Rutas RBAC, catálogo de vidrios y componentes UI."],
+        ["Silva Saavedra, Joseph Gabriel", "U22219400", "@SugaAG", "fix/ruta-admin-usuarios", "Rutas RBAC, activación /admin/usuarios (PR #52, Commit 983a5d6)."],
         ["Vargas Huamán, Frank Emiliano", "U23243651", "@frankitoromas-tech", "feat/ci-pipeline", "Pipeline CI/CD, suite Vitest y calidad de código."],
         ["Juárez Huarcaya, Jhair Luis Ángel", "U22224474", "@jhair78", "feat/cd-vercel", "Despliegue CD en Vercel, issues #45-#47 y validación."]
     ]
