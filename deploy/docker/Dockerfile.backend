@@ -1,0 +1,42 @@
+# ==============================================================================
+# Dockerfile.backend - Vitraglass System Backend
+# Spring Boot 4 + Java 17 + Eclipse Temurin Alpine Multi-stage Build
+# Rúbrica UTP: Sección 9.1 (Empaquetado) y Sección 10 (Matriz de Evidencias)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Etapa 1: Build & Compilation (Maven 3.9 + JDK 17 Alpine)
+# ------------------------------------------------------------------------------
+FROM maven:3.9.9-eclipse-temurin-17-alpine AS builder
+
+WORKDIR /build
+
+# Pre-descarga de dependencias para acelerar reconstrucciones
+COPY pom.xml ./
+RUN mvn dependency:go-offline -B || true
+
+# Copia de código fuente y empaquetado del artefacto JAR ejecutable
+COPY src ./src
+RUN mvn clean package -DskipTests -B
+
+# ------------------------------------------------------------------------------
+# Etapa 2: Runtime Optimizado (JRE 17 Alpine Minimal)
+# ------------------------------------------------------------------------------
+FROM eclipse-temurin:17-jre-alpine AS runner
+
+WORKDIR /app
+
+# Crear usuario sin privilegios para mitigar riesgos de seguridad
+RUN addgroup -S spring && adduser -S spring -G spring
+USER spring:spring
+
+# Copiar artefacto compilado
+COPY --from=builder /build/target/*.jar app.jar
+
+ENV SERVER_PORT=8080
+EXPOSE 8080
+
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 --start-period=30s \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:8080/actuator/health || exit 1
+
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "app.jar"]

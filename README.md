@@ -1,8 +1,9 @@
 # VitraGlass — Frontend (vitraglass)
 
-[![CI/CD Pipeline](https://github.com/Arelizoyarce/front_end_vitraglass/actions/workflows/ci.yml/badge.svg)](https://github.com/Arelizoyarce/front_end_vitraglass/actions/workflows/ci.yml)
+[![CI/CD Pipeline](https://github.com/Arelizoyarce/front_end_vitraglass/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Arelizoyarce/front_end_vitraglass/actions/workflows/ci.yml)
 [![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-000000?style=flat&logo=vercel&logoColor=white)](https://frontendvitraglass.vercel.app)
-[![Release Candidate](https://img.shields.io/badge/Release-v0.1.0--rc%20(APF3)-2563EB?style=flat&logo=git&logoColor=white)](https://github.com/Arelizoyarce/front_end_vitraglass)
+[![Release Candidate](https://img.shields.io/badge/Release-v0.3.0--rc1%20(APF3)-2563EB?style=flat&logo=git&logoColor=white)](https://github.com/Arelizoyarce/front_end_vitraglass/releases/tag/v0.3.0-rc1)
+[![Vitest Tests](https://img.shields.io/badge/Vitest-15%2F15%20Passing-6E9F18?style=flat&logo=vitest&logoColor=white)](https://vitest.dev/)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
 
@@ -109,11 +110,13 @@ git push origin feat/nombre-funcionalidad
 
 ## 6. Equipo
 
-- More Manrique, Renzo José — (U22228363)
-- Oyarce Franco, Cynthia Areliz — (U23208307)
-- Silva Saavedra, Joseph Gabriel Enrique — (U22219400)
-- Vargas Huaman, Frank Emiliano — (U23243651)
-- Juárez Huarcaya, Jhair Luis Ángel — (U22224474)
+| Integrante | Código UTP | Usuario GitHub | Rol Técnico Principal |
+|---|:---:|:---:|---|
+| **More Manrique, Renzo José** | `U22228363` | [`@Aryi-MM`](https://github.com/Aryi-MM) | Control de Versiones, Ramas & Seguridad Spring |
+| **Oyarce Franco, Cynthia Areliz** | `U23208307` | [`@Arelizoyarce`](https://github.com/Arelizoyarce) | Frontend Architect, Code Reviewer & Release Lead |
+| **Silva Saavedra, Joseph Gabriel** | `U22219400` | [`@SugaAG`](https://github.com/SugaAG) | Business Logic, Catálogo de Vidrios & Rutas RBAC |
+| **Vargas Huamán, Frank Emiliano** | `U23243651` | [`@frankitoromas-tech`](https://github.com/frankitoromas-tech) | CI/CD Pipeline Architect, Vitest Suite & QA Lead |
+| **Juárez Huarcaya, Jhair Luis Ángel** | `U22224474` | [`@jhair78`](https://github.com/jhair78) | CD Cloud Deployment, Issues Trazabilidad & Vercel |
 
 ---
 
@@ -154,11 +157,11 @@ Garantizar la estabilidad, integridad y calidad del frontend de **VitraGlass** a
 ## 8. Entrega Continua (CD), Despliegue en la Nube y Versión Candidata (APF3 - Semana 15)
 
 ### 8.1. Propósito, Estado de Versión Candidata y Entorno en la Nube
-Para el hito **APF3 (Semana 15)** de la asignatura *Herramientas de Desarrollo*, el equipo consolidó la integración continua y configuró la **Entrega Continua (CD)** hacia la plataforma en la nube **Vercel**, dejando disponible una versión candidata estable (`Release Candidate v0.1.0-rc`) para auditoría técnica, pruebas funcionales por roles y evaluación académica.
+Para el hito **APF3 (Semana 15)** de la asignatura *Herramientas de Desarrollo*, el equipo consolidó la integración continua y configuró la **Entrega Continua (CD)** hacia la plataforma en la nube **Vercel**, dejando disponible una versión candidata estable (`Release Candidate v0.3.0-rc1`) para auditoría técnica, pruebas funcionales por roles y evaluación académica.
 
 * **URL de Producción en la Nube:** [https://frontendvitraglass.vercel.app](https://frontendvitraglass.vercel.app)
 * **Plataforma de Despliegue (CD):** Vercel Edge Network
-* **Estado de la Versión:** `v0.1.0-rc` (Rama `main` consolidada)
+* **Estado de la Versión:** `v0.3.0-rc1` (Rama `main` consolidada — Release: [`v0.3.0-rc1`](https://github.com/Arelizoyarce/front_end_vitraglass/releases/tag/v0.3.0-rc1))
 * **Mecanismo de Despliegue Continuo (CD):** Vercel se encuentra enlazado al repositorio de GitHub mediante webhooks automáticos. Cada commit o Pull Request validado e integrado en la rama `main` dispara de forma inmediata el proceso de construcción (*bundling*) y propagación global de artefactos estáticos en la red perimetral de Vercel en ~23 segundos, garantizando *Zero-Downtime Deployment*.
 
 ```
@@ -177,12 +180,12 @@ En cumplimiento estricto del acápite **8.2 (Evidencias obligatorias)** de los l
 | Issue # | Título / Requerimiento Técnico | Tipo | Responsable | Commit / PR Vinculado | Estado | Resultado / Criterio de Aceptación |
 |:---:|---|:---:|:---:|:---:|:---:|---|
 | **#45** | Configurar entrega continua (CD) y despliegue en la nube | DevOps / CD | Jhair Juárez (`@jhair78`) | Commit [`1c9605f`](https://github.com/Arelizoyarce/front_end_vitraglass/commit/1c9605fc4ec290a4ff728caf14a6bc42e03f1d01) | **Cerrado** (Done) | Workflow `.github/workflows/ci.yml` actualizado con job `Pruebas, compilación y versión candidata (CI/CD)`. Se habilitó la vinculación con Vercel para despliegue automatizado ante cada integración en `main`. |
-| **#46** | Actualizar `README.md` con URL de entorno en nube y estado de versión candidata | Documentación | Jhair Juárez (`@jhair78`) / Frank Vargas (`@frankitoromas-tech`) | Commit [`b0df8b9`](https://github.com/Arelizoyarce/front_end_vitraglass/commit/b0df8b95c4b8ad8d65f16f64acd5c192a18a4801) / PR Docs | **Cerrado** (Done) | Documentación técnica enriquecida con badges de estado, matriz de incidencias, enlace al entorno cloud en Vercel, credenciales de prueba y arquitectura de ejecución. |
+| **#46** | Actualizar `README.md` con URL de entorno en nube y estado de versión candidata | Documentación | Jhair Juárez (`@jhair78`) / Frank Vargas (`@frankitoromas-tech`) | Commit [`b0df8b9`](https://github.com/Arelizoyarce/front_end_vitraglass/commit/b0df8b95c4b8ad8d65f16f64acd5c192a18a4801) / PR [#48](https://github.com/Arelizoyarce/front_end_vitraglass/pull/48) | **Cerrado** (Done) | Documentación técnica enriquecida con badges de estado, matriz de incidencias, enlace al entorno cloud en Vercel, credenciales de prueba y arquitectura de ejecución. |
 | **#47** | Validar flujo de autenticación JWT y cotizaciones en el entorno de nube | QA / Pruebas Cloud | Jhair Juárez (`@jhair78`) | Validación en Vercel [`frontendvitraglass.vercel.app`](https://frontendvitraglass.vercel.app) | **Cerrado** (Done) | Verificación exitosa en navegador: carga de la SPA en nube, inicio de sesión por roles (`ADMIN` y `VENDEDOR`), almacenamiento del token en `localStorage` y ruteo protegido sin caídas de servidor. |
 | **#19** | Servicio de cálculo de cotizaciones y endpoints REST | Backend / Feature | Frank Vargas (`@frankitoromas-tech`) | PR [#21](https://github.com/Arelizoyarce/front_end_vitraglass/pull/21) / Commit `863d29d` | **Cerrado** (Merged) | Algoritmo de cálculo de área ($m^2$), recargos por acabados y persistencia relacional de cotizaciones y detalles en MySQL. |
-| **#17** | Endpoints REST para catálogo y administración de vidrios | Backend / Feature | Joseph Silva (`@josephsilva`) | PR [#20](https://github.com/Arelizoyarce/front_end_vitraglass/pull/20) / Commit `a521420` | **Cerrado** (Merged) | Capa CRUD completa para gestión de vidrios (precios por metro cuadrado, grosor en mm y activación lógica). |
+| **#17** | Endpoints REST para catálogo y administración de vidrios | Backend / Feature | Joseph Silva (`@SugaAG`) | PR [#20](https://github.com/Arelizoyarce/front_end_vitraglass/pull/20) / Commit `a521420` | **Cerrado** (Merged) | Capa CRUD completa para gestión de vidrios (precios por metro cuadrado, grosor en mm y activación lógica). |
 | **#24** | Endpoints REST y capa de servicios de clientes | Backend / Feature | Cynthia Oyarce (`@Arelizoyarce`) | PR [#29](https://github.com/Arelizoyarce/front_end_vitraglass/pull/29) / Commit `b17856b` | **Cerrado** (Merged) | Servicios de consulta y registro de clientes comerciales con validación de datos de contacto. |
-| **#7, #8** | Seguridad Spring Security, JwtFilter y controladores de usuarios | Backend / Security | Renzo More (`@renzomore`) | PR [#22](https://github.com/Arelizoyarce/front_end_vitraglass/pull/22) / Commit `0252859` | **Cerrado** (Merged) | Interceptor de seguridad HTTP, validación de firmas JWT y endpoints de autenticación y roles de usuario. |
+| **#7, #8** | Seguridad Spring Security, JwtFilter y controladores de usuarios | Backend / Security | Renzo More (`@Aryi-MM`) | PR [#22](https://github.com/Arelizoyarce/front_end_vitraglass/pull/22) / Commit `0252859` | **Cerrado** (Merged) | Interceptor de seguridad HTTP, validación de firmas JWT y endpoints de autenticación y roles de usuario. |
 | **#1, #2** | Modelo entidad-relación y servicio de gestión de pedidos | Backend / Feature | Jhair Juárez (`@jhair78`) | PR [#27](https://github.com/Arelizoyarce/front_end_vitraglass/pull/27), PR [#30](https://github.com/Arelizoyarce/front_end_vitraglass/pull/30) | **Cerrado** (Merged) | Entidades JPA de pedidos, trazabilidad de estados (`COTIZADO`, `EN_PROCESO`, `ENTREGADO`) y repositorio de auditoría. |
 | **#3, #4** | Generación de boletas en PDF y despacho automatizado por correo | Backend / Integración | Frank Vargas (`@frankitoromas-tech`) | PR [#31](https://github.com/Arelizoyarce/front_end_vitraglass/pull/31), PR [#33](https://github.com/Arelizoyarce/front_end_vitraglass/pull/33) | **Cerrado** (Merged) | Pipeline de renderizado de boletas PDF comerciales y motor SMTP asíncrono para notificación al cliente. |
 

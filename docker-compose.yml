@@ -1,0 +1,96 @@
+# ==============================================================================
+# Docker Compose - Vitraglass Enterprise Solution
+# Anticipación Hito Final: Semana 18 (PROY 40% - Contenedores y Despliegue Cloud)
+# Rúbrica UTP: Secciones 9.1 (Empaquetado) y 10 (Matriz de Evidencias)
+# ==============================================================================
+
+name: vitraglass-solution
+
+services:
+  # ----------------------------------------------------------------------------
+  # Servicio Frontend: React 19 + Vite 6 + Nginx Alpine
+  # ----------------------------------------------------------------------------
+  frontend:
+    build:
+      context: .
+      dockerfile: deploy/docker/Dockerfile.frontend
+      args:
+        - VITE_API_URL=http://localhost:8080/api
+        - VITE_USE_MOCKS=false
+    image: vitraglass/frontend:v0.9.0-rc
+    container_name: vitraglass-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:80/healthz || exit 1"]
+      interval: 15s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    depends_on:
+      backend:
+        condition: service_started
+        required: false
+    networks:
+      - vitraglass-network
+
+  # ----------------------------------------------------------------------------
+  # Servicio Backend: Spring Boot 4 + Java 17 + JPA Hibernate
+  # ----------------------------------------------------------------------------
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../deploy/docker/Dockerfile.backend
+    image: vitraglass/backend:v0.9.0-rc
+    container_name: vitraglass-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/vitrglass_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Lima
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - SERVER_PORT=8080
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - vitraglass-network
+
+  # ----------------------------------------------------------------------------
+  # Servicio Base de Datos: MySQL 8.0 Enterprise Relational Store
+  # ----------------------------------------------------------------------------
+  mysql:
+    image: mysql:8.0
+    container_name: vitraglass-mysql
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=vitrglass_db
+      - MYSQL_ROOT_PASSWORD=admin
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-padmin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    networks:
+      - vitraglass-network
+
+networks:
+  vitraglass-network:
+    name: vitraglass-network
+    driver: bridge
+
+volumes:
+  mysql_data:
+    name: vitraglass_mysql_data
+    driver: local

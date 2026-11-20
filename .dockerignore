@@ -1,0 +1,43 @@
+# ==============================================================================
+# .dockerignore - Vitraglass Project
+# Exclusiones de contexto para optimización de builds Docker
+# ==============================================================================
+
+# Dependencias locales y symlinks
+node_modules/
+.pnpm-store/
+
+# Artefactos de build local
+dist/
+dist-ssr/
+*.local
+
+# Control de versiones y metadatos
+.git/
+.github/
+.gitignore
+
+# Documentación e informes de auditoría (no requeridos en imagen de runtime)
+docs/
+*.md
+
+# Entornos y secretos locales
+.env*.local
+.env
+
+# Backend local (aislado en su propio contexto)
+backend/
+
+# Cobertura y reportes de tests
+coverage/
+.nyc_output/
+
+# IDEs y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
