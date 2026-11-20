@@ -1,0 +1,172 @@
+{
+  "proyecto": {
+    "nombre": "VitraGlass — Sistema Web de Gestión y Cotizaciones para Vidrierías",
+    "asignatura": "Herramientas de Desarrollo (100000S66T - Sección 57524)",
+    "institucion": "Universidad Tecnológica del Perú (UTP)",
+    "hito_academico": "APF3 - Avance de Proyecto Final 3 (Semana 15)",
+    "version_candidata": "v0.3.0-rc1",
+    "commit_base": "a8d0f7246ba33c010d2ec6d611d64cdb5638b585",
+    "repositorio_oficial": "https://github.com/Arelizoyarce/front_end_vitraglass",
+    "url_produccion_vercel": "https://frontendvitraglass.vercel.app",
+    "fecha_certificacion": "2026-11-20T15:58:16.589062+00:00"
+  },
+  "equipo_desarrollo": [
+    {
+      "nombre": "Vargas Huamán, Frank Emiliano",
+      "codigo": "U23243651",
+      "usuario_github": "frankitoromas-tech",
+      "rol": "CI/CD Architect & Backend Specialist"
+    },
+    {
+      "nombre": "Juárez Huarcaya, Jhair Luis Ángel",
+      "codigo": "U22224474",
+      "usuario_github": "jhair78",
+      "rol": "Frontend Lead & Cloud Deployment"
+    },
+    {
+      "nombre": "Oyarce Franco, Cynthia Areliz",
+      "codigo": "U23208307",
+      "usuario_github": "Arelizoyarce",
+      "rol": "Frontend Integrator & Repository Owner"
+    },
+    {
+      "nombre": "More Manrique, Renzo José",
+      "codigo": "U22228363",
+      "usuario_github": "Aryi-MM",
+      "rol": "Backend Developer"
+    },
+    {
+      "nombre": "Silva Saavedra, Joseph Gabriel Enrique",
+      "codigo": "U22219400",
+      "usuario_github": "SugaAG",
+      "rol": "Frontend Developer"
+    }
+  ],
+  "metricas_pruebas_vitest": {
+    "framework": "Vitest 5.1.0 (Node 22 / Vite 8.3)",
+    "archivos_suites": 4,
+    "suites_pasadas": 4,
+    "total_pruebas": 15,
+    "pruebas_exitosas": 15,
+    "pruebas_fallidas": 0,
+    "duracion_segundos": 1.08,
+    "detalle_suites": [
+      {
+        "archivo": "src/context/AuthContext.test.jsx",
+        "pruebas": 3,
+        "estado": "PASSED"
+      },
+      {
+        "archivo": "src/services/axiosConfig.test.js",
+        "pruebas": 2,
+        "estado": "PASSED"
+      },
+      {
+        "archivo": "src/services/cotizacion.service.test.js",
+        "pruebas": 6,
+        "estado": "PASSED"
+      },
+      {
+        "archivo": "src/components/ProtectedRoute.test.jsx",
+        "pruebas": 4,
+        "estado": "PASSED"
+      }
+    ]
+  },
+  "metricas_ci_github_actions": {
+    "workflow_file": ".github/workflows/ci.yml",
+    "triggers": [
+      "push",
+      "pull_request"
+    ],
+    "ramas_monitoreadas": [
+      "main"
+    ],
+    "compuertas_calidad": [
+      {
+        "paso": "npm ci",
+        "proposito": "Instalacion determinista y aislada de dependencias"
+      },
+      {
+        "paso": "npm run build",
+        "proposito": "Compilacion de produccion Vite libre de errores de tipado o bundle"
+      },
+      {
+        "paso": "npm run test:run",
+        "proposito": "Ejecucion automatica de la suite de pruebas unitarias Vitest"
+      }
+    ],
+    "prueba_resiliencia": {
+      "run_7_fallo_inducido": {
+        "id": 42440277266,
+        "conclusion": "failure",
+        "duracion_segundos": 24,
+        "causa_raiz": "Asercion rota deliberadamente en prueba unitaria para validar compuerta bloqueante",
+        "resultado": "El pipeline detuvo el flujo e impidio el despliegue a produccion"
+      },
+      "run_8_recuperacion_exitosa": {
+        "id": 42440426977,
+        "conclusion": "success",
+        "duracion_segundos": 22,
+        "accion_correctiva": "Ajuste de asercion rota restableciendo integridad del contrato de prueba",
+        "resultado": "Pipeline verde completo y pase automatico a la siguiente etapa"
+      }
+    },
+    "ultimo_run_main": {
+      "id": 44764358351,
+      "conclusion": "success",
+      "duracion_segundos": 33
+    }
+  },
+  "metricas_cd_vercel": {
+    "plataforma": "Vercel Edge Network",
+    "endpoint": "https://frontendvitraglass.vercel.app",
+    "protocolo": "HTTP/2 (h2) con TLS 1.3",
+    "estado_http": 200,
+    "tiempo_compilacion_cloud": "23s",
+    "seguridad_cabeceras": {
+      "strict_transport_security": "max-age=63072000; includeSubDomains; preload",
+      "x_vercel_cache": "HIT",
+      "server": "Vercel"
+    }
+  },
+  "trazabilidad_incidencias": [
+    {
+      "issue_id": "#45",
+      "titulo": "Configuracion de Entrega Continua (CD) con Vercel",
+      "tipo": "Continuous Deployment (CD)",
+      "responsable": "jhair78",
+      "pull_request": "#48",
+      "estado": "Cerrado / Verificado",
+      "criterio_rubrica": "Plataforma en la nube para el despliegue (Vercel)"
+    },
+    {
+      "issue_id": "#46",
+      "titulo": "Documentacion de badges, URL de produccion y Release Candidate en README.md",
+      "tipo": "Documentation & Quality",
+      "responsable": "Arelizoyarce / frankitoromas-tech",
+      "pull_request": "#48",
+      "estado": "Cerrado / Verificado",
+      "criterio_rubrica": "README enriquecido y version candidata"
+    },
+    {
+      "issue_id": "#47",
+      "titulo": "Implementacion de suite de pruebas unitarias Vitest y validacion en la nube",
+      "tipo": "Testing & QA",
+      "responsable": "jhair78 / frankitoromas-tech",
+      "pull_request": "#48",
+      "estado": "Cerrado / Verificado",
+      "criterio_rubrica": "Validacion automatica pertinente (15 tests Vitest)"
+    }
+  ],
+  "entregables_y_documentacion": {
+    "informe_tecnico_pdf": "docs/informes/INFORME_TECNICO_APF3_VITRAGLASS.pdf (8 paginas netas APA 7ma)",
+    "informe_tecnico_docx": "docs/informes/INFORME_TECNICO_APF3_VITRAGLASS.docx (1,019 KB)",
+    "presentacion_pptx": "docs/presentaciones/SUSTENTACION_APF3_VITRAGLASS.pptx (12 diapositivas 16:9)",
+    "presentacion_pdf": "docs/presentaciones/SUSTENTACION_APF3_VITRAGLASS.pdf (1,495 KB)",
+    "release_notes": "RELEASE_NOTES_v0.3.0-rc1.md",
+    "indice_maestro_evidencias": "docs/EVIDENCIAS_APF3_INDEX.md",
+    "auditoria_rubrica": "docs/informes/AUDITORIA_CUMPLIMIENTO_RUBRICA_UTP_APF3.md",
+    "auditoria_apa7": "docs/informes/AUDITORIA_ESTILO_APA7_PROOFREADER.md"
+  }
+}

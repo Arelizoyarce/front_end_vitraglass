@@ -232,8 +232,9 @@ El proyecto **VitraGlass** implementa un modelo de gobernanza técnica y documen
 
 | Entregable | Formato | Ubicación / Enlace | Descripción y Contenido Clave |
 | :--- | :---: | :--- | :--- |
-| **Informe Técnico APF3** | PDF | [`docs/informes/INFORME_TECNICO_APF3_VITRAGLASS.pdf`](docs/informes/) | Informe formal de 8 páginas: arquitectura CI/CD, métricas de pruebas Vitest, resolución de incidencias (#45-#47) y despliegue en Vercel. |
-| **Diapositivas de Sustentación** | PPTX / PDF | [`docs/presentaciones/SUSTENTACION_APF3_VITRAGLASS.pptx`](docs/presentaciones/) | Presentación ejecutiva de 12 diapositivas (16:9) con distribución equitativa de tiempo para los 5 integrantes (3.2 min por expositor). |
+| **Informe Técnico APF3** | PDF | [`INFORME_TECNICO_APF3_VITRAGLASS.pdf`](docs/informes/INFORME_TECNICO_APF3_VITRAGLASS.pdf) | Informe formal de 8 páginas (norma APA 7ma Edición): arquitectura CI/CD, métricas de pruebas Vitest, resolución de incidencias (#45-#47) y despliegue en Vercel. |
+| **Diapositivas de Sustentación** | PPTX / PDF | [`SUSTENTACION_APF3_VITRAGLASS.pptx`](docs/presentaciones/SUSTENTACION_APF3_VITRAGLASS.pptx) | Presentación ejecutiva de 12 diapositivas (16:9 widescreen) con distribución equitativa de tiempo para los 5 integrantes (3.2 min por expositor). |
+| **Notas de Versión (Release Candidate)** | Markdown | [`RELEASE_NOTES_v0.3.0-rc1.md`](RELEASE_NOTES_v0.3.0-rc1.md) | Trazabilidad del release v0.3.0-rc1, compuertas de calidad superadas y correspondencia con la rúbrica UTP. |
 | **Pipeline de Integración Continua** | YAML | [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | Definición declarativa del workflow automatizado con Node.js 22, Vitest y compilación de producción con Vite. |
 | **Entorno de Nube (CD)** | Cloud | [https://frontendvitraglass.vercel.app](https://frontendvitraglass.vercel.app) | Versión candidata productiva desplegada de forma continua a través de la infraestructura global de Vercel. |
 | **Tablero de Incidencias** | GitHub | [Issues del Proyecto](https://github.com/Arelizoyarce/front_end_vitraglass/issues) | Registro, seguimiento y resolución trazable de incidencias técnicas mediante commits convencionales (`Closes #XX`). |
@@ -293,19 +294,17 @@ npm run build
 #### B. Validación de la Versión Candidata en la Nube
 1. Ingrese a la URL de producción: [https://frontendvitraglass.vercel.app](https://frontendvitraglass.vercel.app).
 2. Utilice las siguientes credenciales para auditar el control de acceso basado en roles:
-   - **Administrador:** `admin@vitraglass.pe` | Clave: `admin123` (Acceso completo a Catálogo y Usuarios).
-   - **Vendedor:** `vendedor@vitraglass.pe` | Clave: `vendedor123` (Acceso restringido a Cotizaciones y Dashboard).
+   - **Administrador (`ADMIN`):** `admin@vitroglass.com` | Clave: `admin123` (Acceso total: gestión de usuarios en `/admin/usuarios`, catálogo de vidrios en `/admin/vidrios` y visión global de cotizaciones en `/dashboard`).
+   - **Vendedor (`VENDEDOR`):** `sofia@vitroglass.com` *(o `carlos@vitroglass.com`)* | Clave: `vendedor123` (Acceso exclusivo a cotizaciones y pedidos propios; redirección forzada y bloqueo por `ProtectedRoute.jsx` ante cualquier intento de acceso a rutas administrativas).
 
 ---
 
-### 9.5. Matriz de Roles y Responsabilidades del Equipo
+### 9.5. Matriz de Roles y Responsabilidades del Equipo (Grupo 6)
 
-```
-+-----------------------------------------------------------------------------------+
-| More Manrique, Renzo José         (U22228363) -> Control de Versiones & Ramas     |
-| Oyarce Franco, Cynthia Areliz     (U23208307) -> Frontend Architect & Reviewer   |
-| Silva Saavedra, Joseph Gabriel    (U22219400) -> Business Logic & Security RBAC   |
-| Vargas Huaman, Frank Emiliano     (U23243651) -> CI Pipeline & Code Quality Lead  |
-| Juárez Huarcaya, Jhair Luis Ángel (U22224474) -> CD Cloud Deployment & Issues Lead|
-+-----------------------------------------------------------------------------------+
-```
+| Integrante | Código UTP | Usuario GitHub | Rama / Módulo | Responsabilidad Asignada |
+|---|:---:|:---:|---|---|
+| **More Manrique, Renzo José** | `U22228363` | [`@Aryi-MM`](https://github.com/Aryi-MM) | `fix/security-props` | Saneamiento de propiedades y variables de entorno. |
+| **Oyarce Franco, Cynthia Areliz** | `U23208307` | [`@Arelizoyarce`](https://github.com/Arelizoyarce) | `feat/apf3-readme` | Arquitectura frontend, revisión de PRs y releases. |
+| **Silva Saavedra, Joseph Gabriel** | `U22219400` | [`@SugaAG`](https://github.com/SugaAG) | `fix/admin-routes` | Rutas RBAC, catálogo de vidrios y componentes UI. |
+| **Vargas Huamán, Frank Emiliano** | `U23243651` | [`@frankitoromas-tech`](https://github.com/frankitoromas-tech) | `feat/ci-pipeline` | Pipeline CI/CD, suite Vitest y calidad de código. |
+| **Juárez Huarcaya, Jhair Luis Ángel** | `U22224474` | [`@jhair78`](https://github.com/jhair78) | `feat/cd-vercel` | Despliegue CD en Vercel, issues #45-#47 y validación. |
